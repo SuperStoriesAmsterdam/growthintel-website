@@ -1,0 +1,57 @@
+/* tokens.css — Growth Intel Design Tokens */
+/* Source of truth for all visual values. Never hardcode these elsewhere. */
+
+:root {
+    /* Colors — matched to the Growth Intel tool */
+    --color-bg:         #0a0a0a;
+    --color-surface:    #111111;
+    --color-text:       #ffffff;
+    --color-text-muted: #ffffff;
+    --color-accent:     #c53a3a;
+    --color-border:     #1e1e1e;
+
+    /* Typography — Families */
+    --font-brand:   'Montserrat', -apple-system, sans-serif;  /* merknaam "GROWTH INTEL" only */
+    --font-display: 'DM Sans', -apple-system, sans-serif;     /* headings, section titles */
+    --font-body:    'Outfit', -apple-system, sans-serif;       /* body copy, UI, everything else */
+
+    /* Typography — Scale */
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-lg:   1.125rem;
+    --text-xl:   1.25rem;
+    --text-2xl:  1.75rem;
+    --text-3xl:  2.25rem;
+    --text-4xl:  clamp(2.5rem, 5vw, 3.5rem);
+    --text-hero: clamp(2.75rem, 6vw, 5rem);
+
+    /* Typography — Weights */
+    --weight-regular: 400;
+    --weight-medium:  500;
+    --weight-semibold: 600;
+
+    /* Spacing — 8px base */
+    --space-1:  0.5rem;    /*  8px */
+    --space-2:  1rem;      /* 16px */
+    --space-3:  1.5rem;    /* 24px */
+    --space-4:  2rem;      /* 32px */
+    --space-6:  3rem;      /* 48px */
+    --space-8:  4rem;      /* 64px */
+    --space-12: 6rem;      /* 96px */
+    --space-16: 8rem;      /* 128px */
+
+    /* Layout */
+    --max-width: 1200px;
+    --content-padding: var(--space-3);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --content-padding: var(--space-6);
+    }
+}
