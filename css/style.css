@@ -616,6 +616,108 @@ a:focus-visible,
     outline-offset: 2px;
 }
 
+/* === POLISH PASS ===================================================== */
+
+/* Hero: soft accent glow to break the flat black and give the headline depth */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(55% 50% at 32% 38%, rgba(197, 58, 58, 0.12), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    letter-spacing: -0.02em;
+}
+
+/* Cards lift slightly and warm their border on hover */
+.step,
+.pricing-card {
+    transition: transform var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.step:hover,
+.pricing-card:hover {
+    transform: translateY(-3px);
+    border-color: #3a3a3a;
+}
+
+/* Editorial step numbers: larger, quieter, sitting like a watermark */
+.step-number {
+    font-size: 3rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+/* Conversation as a real exchange: expert lines get a surface card + accent rail,
+   your lines stay open and quiet. Structure is fixed (You / expert / You / expert). */
+.conversation {
+    max-width: 760px;
+}
+
+.conversation-exchange {
+    border-left: none;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+.conversation-exchange:nth-child(odd) {
+    background: transparent;
+}
+
+.conversation-exchange:nth-child(even) {
+    background: var(--color-surface);
+    border-left: 3px solid var(--color-accent);
+}
+
+/* Beta price: struck list price + highlighted discount */
+.pricing-setup s {
+    color: var(--color-text-muted);
+    text-decoration-thickness: 1px;
+    margin-right: 4px;
+}
+
+.pricing-beta {
+    color: var(--color-accent);
+    font-weight: var(--weight-semibold);
+}
+
+/* CTA: gentle rise on hover so the primary action feels alive */
+.cta-button {
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Pilot section: faint accent wash, matching the hero */
+.pilot-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.pilot-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(50% 70% at 50% 0%, rgba(197, 58, 58, 0.10), transparent 70%);
+    pointer-events: none;
+}
+
+.pilot-section .container {
+    position: relative;
+    z-index: 1;
+}
+
 /* === REDUCED MOTION === */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
