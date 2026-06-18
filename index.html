@@ -47,6 +47,41 @@
 
         <hr class="section-divider">
 
+        <!-- Block: Council demo -->
+        <section id="council">
+            <div class="container">
+                <p class="section-label">Your council</p>
+                <h2 class="section-title">A board in session.</h2>
+                <p class="section-intro">Pick a mind. Ask your question. Watch a sharper one come back. This is the board you get, live.</p>
+                <div class="council-board">
+                    <div class="council-board-head">
+                        <span class="cb-product">Growth Intel</span>
+                        <span class="cb-client">your business</span>
+                    </div>
+                    <div class="council-tabs" id="cbTabs"></div>
+                    <div class="council-feed" id="cbFeed"></div>
+                    <div class="council-input">
+                        <span class="cb-mic"></span>
+                        <span class="cb-field">Ask your council&hellip;</span>
+                        <span class="cb-send">Ask</span>
+                    </div>
+                </div>
+                <script type="application/json" id="councilData">
+                {
+                    "advisors": [
+                        { "name": "Seth Godin", "seat": "The audience", "q": "How do I get more customers?", "a": "You said 'more.' Name the one already in front of you that you keep overlooking." },
+                        { "name": "William Gibson", "seat": "The future", "q": "Is this trend worth chasing?", "a": "The future is already here. Who near you is living it, and what are they doing that you aren't?" },
+                        { "name": "Rand Fishkin", "seat": "Discovery", "q": "Why is nobody finding us?", "a": "Search your customer's problem right now. If you're not on that page, you don't exist yet. Start there." },
+                        { "name": "Bernadette Jiwa", "seat": "The story", "q": "What should our message be?", "a": "Forget the message. What is the smallest true story only you can tell? Say that." },
+                        { "name": "Adrienne Maree Brown", "seat": "Growth", "q": "How do we scale this?", "a": "Stop pushing from the center. What is already growing at the edges that you could feed?" }
+                    ]
+                }
+                </script>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- Block 2: How it works -->
         <section id="how-it-works">
             <div class="container">
@@ -273,26 +308,7 @@
         </div>
     </footer>
 
-    <script>
-    (function () {
-        if (!('IntersectionObserver' in window)) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var sel = '.section-label, .section-title, .section-intro, .step, .voice-item, .board-item, .board-value, .conversation-exchange, .pricing-card, .pilot-description, .about-block, .hero-content > *';
-        var els = Array.prototype.slice.call(document.querySelectorAll(sel));
-        ['.step', '.voice-item', '.board-item', '.pricing-card'].forEach(function (s) {
-            Array.prototype.forEach.call(document.querySelectorAll(s), function (el, i) {
-                el.style.transitionDelay = (i * 0.08) + 's';
-            });
-        });
-        els.forEach(function (el) { el.classList.add('reveal'); });
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-        els.forEach(function (el) { io.observe(el); });
-    })();
-    </script>
+    <script src="js/site.js" defer></script>
 
 </body>
 </html>

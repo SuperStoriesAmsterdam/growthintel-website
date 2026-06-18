@@ -47,6 +47,41 @@
 
         <hr class="section-divider">
 
+        <!-- Block: Council demo -->
+        <section id="council">
+            <div class="container">
+                <p class="section-label">Jouw raad</p>
+                <h2 class="section-title">Een raad in sessie.</h2>
+                <p class="section-intro">Kies een geest. Stel je vraag. Zie er een scherpere terugkomen. Dit is de raad die je krijgt, live.</p>
+                <div class="council-board">
+                    <div class="council-board-head">
+                        <span class="cb-product">Growth Intel</span>
+                        <span class="cb-client">jouw bedrijf</span>
+                    </div>
+                    <div class="council-tabs" id="cbTabs"></div>
+                    <div class="council-feed" id="cbFeed"></div>
+                    <div class="council-input">
+                        <span class="cb-mic"></span>
+                        <span class="cb-field">Vraag je raad iets&hellip;</span>
+                        <span class="cb-send">Vraag</span>
+                    </div>
+                </div>
+                <script type="application/json" id="councilData">
+                {
+                    "advisors": [
+                        { "name": "Seth Godin", "seat": "De doelgroep", "q": "Hoe krijg ik meer klanten?", "a": "Je zei 'meer.' Noem de ene die al voor je neus zit en die je steeds over het hoofd ziet." },
+                        { "name": "William Gibson", "seat": "De toekomst", "q": "Is deze trend het waard?", "a": "De toekomst is er al. Wie in je buurt leeft hem al, en wat doet die wat jij niet doet?" },
+                        { "name": "Rand Fishkin", "seat": "Vindbaarheid", "q": "Waarom vindt niemand ons?", "a": "Zoek nu het probleem van je klant. Sta je niet op die pagina, dan besta je nog niet. Begin daar." },
+                        { "name": "Bernadette Jiwa", "seat": "Het verhaal", "q": "Wat moet onze boodschap zijn?", "a": "Vergeet de boodschap. Wat is het kleinste ware verhaal dat alleen jij kunt vertellen? Vertel dat." },
+                        { "name": "Adrienne Maree Brown", "seat": "Groei", "q": "Hoe schalen we dit?", "a": "Stop met duwen vanuit het centrum. Wat groeit er al aan de randen dat je kunt voeden?" }
+                    ]
+                }
+                </script>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- Block 2: Hoe het werkt -->
         <section id="hoe-het-werkt">
             <div class="container">
@@ -273,26 +308,7 @@
         </div>
     </footer>
 
-    <script>
-    (function () {
-        if (!('IntersectionObserver' in window)) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var sel = '.section-label, .section-title, .section-intro, .step, .voice-item, .board-item, .board-value, .conversation-exchange, .pricing-card, .pilot-description, .about-block, .hero-content > *';
-        var els = Array.prototype.slice.call(document.querySelectorAll(sel));
-        ['.step', '.voice-item', '.board-item', '.pricing-card'].forEach(function (s) {
-            Array.prototype.forEach.call(document.querySelectorAll(s), function (el, i) {
-                el.style.transitionDelay = (i * 0.08) + 's';
-            });
-        });
-        els.forEach(function (el) { el.classList.add('reveal'); });
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-        els.forEach(function (el) { io.observe(el); });
-    })();
-    </script>
+    <script src="../js/site.js" defer></script>
 
 </body>
 </html>
