@@ -8,7 +8,9 @@
     <link rel="alternate" hreflang="en" href="/">
     <link rel="alternate" hreflang="nl" href="/nl/">
     <link rel="alternate" hreflang="x-default" href="/">
-    <link rel="preload" href="fonts/DMSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,7 +25,7 @@
             </a>
             <nav class="nav-right">
                 <a href="/nl/" class="lang-switch">NL</a>
-                <a href="#signup" class="header-cta">Apply for the beta</a>
+                <a href="#signup" class="header-cta">Apply for a seat</a>
             </nav>
         </div>
     </header>
@@ -37,7 +39,7 @@
                     <h1 class="hero-title"><span class="key">Five experts</span> who know your business.</h1>
                     <p class="hero-subtitle"><span class="key">Always available.</span> Never polite.</p>
                     <p class="hero-description">Growth Intel is a council of AI advisors, calibrated to <span class="key">your specific situation</span>. No generic answers. Sharp questions from experts who understand your context.</p>
-                    <a href="#signup" class="cta-button">Apply for the beta &rarr;</a>
+                    <a href="#signup" class="cta-button">Apply for a founding seat &rarr;</a>
                 </div>
                 <a href="#how-it-works" class="hero-scroll-cue" aria-label="Read on">&darr;</a>
             </div>
@@ -72,12 +74,37 @@
 
         <hr class="section-divider">
 
+        <!-- Block: Voices -->
+        <section id="voices">
+            <div class="container">
+                <p class="section-label">The voices</p>
+                <h2 class="section-title">The questions a good board asks.</h2>
+                <p class="section-intro">The questions that move you, before any answer arrives. A sense of how your council thinks.</p>
+                <div class="voices">
+                    <div class="voice-item">
+                        <p class="voice-text">"You said you want to grow. Growth of what, exactly, and for whom?"</p>
+                        <p class="voice-attr">Your positioning seat</p>
+                    </div>
+                    <div class="voice-item">
+                        <p class="voice-text">"Say the promise in one sentence, no adjectives. If you can't, neither can your customer."</p>
+                        <p class="voice-attr">Your strategy seat</p>
+                    </div>
+                    <div class="voice-item">
+                        <p class="voice-text">"You keep saying 'the market.' Name three people in it, then tell me which one you build for first."</p>
+                        <p class="voice-attr">Your go-to-market seat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- Block 3: Show, don't tell -->
         <section id="example">
             <div class="container">
                 <p class="section-label">In practice</p>
-                <h2 class="section-title">No advice. A sharp question back.</h2>
-                <p class="section-intro">This is what a conversation with one of your experts looks like. No answers. <span class="key">The questions you're not asking yourself.</span></p>
+                <h2 class="section-title">The question you weren't asking.</h2>
+                <p class="section-intro">This is how a conversation with one of your experts goes. <span class="key">The questions you don't ask yourself.</span></p>
                 <div class="conversation">
                     <div class="conversation-exchange">
                         <p class="conversation-speaker">You</p>
@@ -96,6 +123,32 @@
                         <p class="conversation-text">"Start there. Find out why she stays, and you'll know exactly who to look for next."</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Block: Living board -->
+        <section id="evolves">
+            <div class="container">
+                <p class="section-label">The subscription</p>
+                <h2 class="section-title">Your board grows with you.</h2>
+                <p class="section-intro">You start with five experts, calibrated to your business. From there it keeps sharpening around what you're working on.</p>
+                <div class="board-grid">
+                    <div class="board-item">
+                        <h3 class="board-item-title">A new expert every month</h3>
+                        <p>Twelve experts are calibrated into your bench each year. Each is &euro;200 of work on its own, so &euro;2,400 of expertise is wired in annually, inside your subscription.</p>
+                    </div>
+                    <div class="board-item">
+                        <h3 class="board-item-title">Shape your own board</h3>
+                        <p>After your first three months you curate. Keep your five, swap a seat, or grow your active board to eight.</p>
+                    </div>
+                    <div class="board-item">
+                        <h3 class="board-item-title">A board for one decision</h3>
+                        <p>When a launch, a hire or a pricing call needs a different kind of mind, convene a board built only for it, then return to your standing council.</p>
+                    </div>
+                </div>
+                <p class="board-value">&euro;1,188 a year in, <strong>&euro;2,400 of calibrated experts</strong> out.</p>
             </div>
         </section>
 
@@ -153,35 +206,39 @@
             <div class="container">
                 <p class="section-label">Pricing</p>
                 <h2 class="section-title">Two formats. One principle.</h2>
-                <p class="section-intro">The intake makes the difference. Without that conversation, it's a chatbot. With it, it's a council that knows your situation.</p>
+                <p class="section-intro">These are founding prices, locked for as long as you stay. The intake is the work that turns five experts into your council.</p>
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <p class="pricing-card-label">Solo</p>
                         <h3 class="pricing-card-title">For entrepreneurs who decide alone</h3>
-                        <p class="pricing-setup">Intake &amp; calibration: <s>&euro;595</s> <span class="pricing-beta">&euro;297.50 beta</span></p>
-                        <p class="pricing-amount">&euro;49.50</p>
-                        <p class="pricing-period">per month</p>
+                        <p class="pricing-amount"><s class="pricing-standard">&euro;99</s> &euro;49.50</p>
+                        <p class="pricing-period">per month &middot; founding rate, locked for life</p>
+                        <p class="pricing-value">&euro;2,400 of experts wired in a year, included</p>
+                        <p class="pricing-note">Plus &euro;595 intake &amp; calibration, once. <span class="pricing-free">Free if your first session doesn't land.</span></p>
                         <ul class="pricing-features">
                             <li>1 intake conversation with Peter</li>
-                            <li>5 experts chosen for your situation</li>
-                            <li>Always available, 24/7</li>
-                            <li>Experts who know your context</li>
+                            <li>Your council of five, calibrated to your situation</li>
+                            <li>Twelve new experts a year, swap or grow up to eight</li>
+                            <li>Convene a focused board for a single decision</li>
+                            <li>Available 24/7</li>
                         </ul>
-                        <a href="#signup" class="cta-button">Apply for the beta &rarr;</a>
+                        <a href="#signup" class="cta-button">Apply for a founding seat &rarr;</a>
                     </div>
                     <div class="pricing-card">
                         <p class="pricing-card-label">Teams</p>
                         <h3 class="pricing-card-title">For teams stuck in their own perspectives</h3>
-                        <p class="pricing-setup">Intake &amp; calibration: <s>&euro;995</s> <span class="pricing-beta">&euro;497.50 beta</span></p>
-                        <p class="pricing-amount">&euro;195</p>
-                        <p class="pricing-period">per month</p>
+                        <p class="pricing-amount"><s class="pricing-standard">&euro;395</s> &euro;195</p>
+                        <p class="pricing-period">per month &middot; founding rate, locked for life</p>
+                        <p class="pricing-value">&euro;2,400 of experts wired in a year, included</p>
+                        <p class="pricing-note">Plus &euro;995 intake &amp; calibration, once. <span class="pricing-free">Free if your first session doesn't land.</span></p>
                         <ul class="pricing-features">
                             <li>3&ndash;5 intake conversations with key people</li>
-                            <li>Experts + formats (Council, Mirror, Futures)</li>
+                            <li>Your council, plus formats (Council, Mirror, Futures)</li>
+                            <li>Twelve new experts a year, swap or grow up to eight</li>
+                            <li>Convene a focused board for a single decision</li>
                             <li>Full team access</li>
-                            <li>Experts who know your situation</li>
                         </ul>
-                        <a href="#signup" class="cta-button">Apply for the beta &rarr;</a>
+                        <a href="#signup" class="cta-button">Apply for a founding seat &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -193,9 +250,9 @@
         <section id="signup" class="pilot-section">
             <div class="container">
                 <p class="section-label">Beta</p>
-                <h2 class="section-title">The first 10. Half-price calibration.</h2>
-                <p class="pilot-description">We're opening Growth Intel to the first 10 founders and teams. Intake and calibration at half price, then the monthly rate as listed. In return, you give us honest feedback while we build.</p>
-                <a href="#signup" class="cta-button">Apply for the beta &rarr;</a>
+                <h2 class="section-title">Ten founding seats. By application.</h2>
+                <p class="pilot-description">We're opening Growth Intel to the first ten founders and teams. You lock the founding rate for as long as you stay, get a direct line to Peter while we build, and your board grows every month. The intake is guaranteed: if your first session doesn't change a question you're asking, it's free. In return: your honest feedback.</p>
+                <a href="#signup" class="cta-button">Apply for a founding seat &rarr;</a>
             </div>
         </section>
 
@@ -215,6 +272,27 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    (function () {
+        if (!('IntersectionObserver' in window)) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var sel = '.section-label, .section-title, .section-intro, .step, .voice-item, .board-item, .board-value, .conversation-exchange, .pricing-card, .pilot-description, .about-block, .hero-content > *';
+        var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+        ['.step', '.voice-item', '.board-item', '.pricing-card'].forEach(function (s) {
+            Array.prototype.forEach.call(document.querySelectorAll(s), function (el, i) {
+                el.style.transitionDelay = (i * 0.08) + 's';
+            });
+        });
+        els.forEach(function (el) { el.classList.add('reveal'); });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
 
 </body>
 </html>

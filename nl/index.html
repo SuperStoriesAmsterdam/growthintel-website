@@ -8,7 +8,9 @@
     <link rel="alternate" hreflang="en" href="/">
     <link rel="alternate" hreflang="nl" href="/nl/">
     <link rel="alternate" hreflang="x-default" href="/">
-    <link rel="preload" href="../fonts/DMSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap">
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -23,7 +25,7 @@
             </a>
             <nav class="nav-right">
                 <a href="/" class="lang-switch">EN</a>
-                <a href="#aanmelden" class="header-cta">Aanmelden voor de beta</a>
+                <a href="#aanmelden" class="header-cta">Aanmelden voor een zetel</a>
             </nav>
         </div>
     </header>
@@ -37,7 +39,7 @@
                     <h1 class="hero-title"><span class="key">Vijf experts</span> die jouw bedrijf kennen.</h1>
                     <p class="hero-subtitle"><span class="key">Altijd beschikbaar.</span> Nooit beleefd.</p>
                     <p class="hero-description">Growth Intel is een raad van AI-adviseurs, gekalibreerd op <span class="key">jouw specifieke situatie</span>. Geen generieke antwoorden. Scherpe vragen van experts die jouw context begrijpen.</p>
-                    <a href="#aanmelden" class="cta-button">Aanmelden voor de beta &rarr;</a>
+                    <a href="#aanmelden" class="cta-button">Aanmelden voor een founding-zetel &rarr;</a>
                 </div>
                 <a href="#hoe-het-werkt" class="hero-scroll-cue" aria-label="Lees verder">&darr;</a>
             </div>
@@ -72,12 +74,37 @@
 
         <hr class="section-divider">
 
+        <!-- Block: Voices -->
+        <section id="stemmen">
+            <div class="container">
+                <p class="section-label">De stemmen</p>
+                <h2 class="section-title">De vragen die een goede raad stelt.</h2>
+                <p class="section-intro">De vragen die je in beweging brengen, nog voor er een antwoord komt. Een idee van hoe jouw raad denkt.</p>
+                <div class="voices">
+                    <div class="voice-item">
+                        <p class="voice-text">"Je zegt dat je wilt groeien. Groei van wat, precies, en voor wie?"</p>
+                        <p class="voice-attr">Je positioneringszetel</p>
+                    </div>
+                    <div class="voice-item">
+                        <p class="voice-text">"Zeg de belofte in &eacute;&eacute;n zin, zonder bijvoeglijke naamwoorden. Lukt dat niet, dan lukt het je klant ook niet."</p>
+                        <p class="voice-attr">Je strategiezetel</p>
+                    </div>
+                    <div class="voice-item">
+                        <p class="voice-text">"Je blijft 'de markt' zeggen. Noem drie mensen erin, en zeg dan voor wie je als eerste bouwt."</p>
+                        <p class="voice-attr">Je go-to-market-zetel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- Block 3: Laat zien -->
         <section id="voorbeeld">
             <div class="container">
                 <p class="section-label">In de praktijk</p>
-                <h2 class="section-title">Geen advies. Een scherpe vraag terug.</h2>
-                <p class="section-intro">Dit is hoe een gesprek eruitziet met een van je experts. Geen antwoorden. <span class="key">De vragen die je zelf niet stelt.</span></p>
+                <h2 class="section-title">De vraag die je zelf niet stelde.</h2>
+                <p class="section-intro">Zo verloopt een gesprek met een van je experts. <span class="key">De vragen die je jezelf niet stelt.</span></p>
                 <div class="conversation">
                     <div class="conversation-exchange">
                         <p class="conversation-speaker">Jij</p>
@@ -96,6 +123,32 @@
                         <p class="conversation-text">"Begin daar. Ontdek waarom zij blijft, en je weet precies wie je hierna moet zoeken."</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Block: Living board -->
+        <section id="raad-groeit">
+            <div class="container">
+                <p class="section-label">Het abonnement</p>
+                <h2 class="section-title">Je raad groeit met je mee.</h2>
+                <p class="section-intro">Je begint met vijf experts, gekalibreerd op jouw bedrijf. Vanaf daar wordt het scherper rond waar je aan werkt.</p>
+                <div class="board-grid">
+                    <div class="board-item">
+                        <h3 class="board-item-title">Elke maand een nieuwe expert</h3>
+                        <p>Twaalf experts worden per jaar in je bank gekalibreerd. Elk is op zichzelf &euro;200 werk, dus &euro;2.400 aan expertise zit jaarlijks in je abonnement.</p>
+                    </div>
+                    <div class="board-item">
+                        <h3 class="board-item-title">Stel je eigen raad samen</h3>
+                        <p>Na je eerste drie maanden cureer je zelf. Houd je vijf, ruil een zetel, of groei je actieve raad naar acht.</p>
+                    </div>
+                    <div class="board-item">
+                        <h3 class="board-item-title">Een raad voor &eacute;&eacute;n besluit</h3>
+                        <p>Als een lancering, een aanname of een prijsbesluit een ander soort denken vraagt, roep je een raad bijeen alleen daarvoor, en keer je daarna terug naar je vaste raad.</p>
+                    </div>
+                </div>
+                <p class="board-value">&euro;1.188 per jaar erin, <strong>&euro;2.400 aan gekalibreerde experts</strong> eruit.</p>
             </div>
         </section>
 
@@ -153,35 +206,39 @@
             <div class="container">
                 <p class="section-label">Prijzen</p>
                 <h2 class="section-title">Twee vormen. E&eacute;n principe.</h2>
-                <p class="section-intro">De intake maakt het verschil. Zonder dat gesprek is het een chatbot. Met dat gesprek is het een raad die je situatie kent.</p>
+                <p class="section-intro">Dit zijn founding-prijzen, vast zolang je blijft. De intake is het werk dat van vijf experts jouw raad maakt.</p>
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <p class="pricing-card-label">Solo</p>
                         <h3 class="pricing-card-title">Voor ondernemers die alleen beslissen</h3>
-                        <p class="pricing-setup">Intake &amp; kalibratie: <s>&euro;595</s> <span class="pricing-beta">&euro;297,50 beta</span></p>
-                        <p class="pricing-amount">&euro;49,50</p>
-                        <p class="pricing-period">per maand</p>
+                        <p class="pricing-amount"><s class="pricing-standard">&euro;99</s> &euro;49,50</p>
+                        <p class="pricing-period">per maand &middot; founding rate, vast voor het leven</p>
+                        <p class="pricing-value">&euro;2.400 aan experts per jaar, inbegrepen</p>
+                        <p class="pricing-note">Plus &euro;595 intake &amp; kalibratie, eenmalig. <span class="pricing-free">Gratis als je eerste sessie niet raak is.</span></p>
                         <ul class="pricing-features">
                             <li>1 intake-gesprek met Peter</li>
-                            <li>5 experts gekozen voor jouw situatie</li>
-                            <li>Altijd beschikbaar, 24/7</li>
-                            <li>Experts die jouw context kennen</li>
+                            <li>Je raad van vijf, gekalibreerd op jouw situatie</li>
+                            <li>Twaalf nieuwe experts per jaar, ruil of groei tot acht</li>
+                            <li>Roep een gerichte raad bijeen voor &eacute;&eacute;n besluit</li>
+                            <li>24/7 beschikbaar</li>
                         </ul>
-                        <a href="#aanmelden" class="cta-button">Aanmelden voor de beta &rarr;</a>
+                        <a href="#aanmelden" class="cta-button">Aanmelden voor een founding-zetel &rarr;</a>
                     </div>
                     <div class="pricing-card">
                         <p class="pricing-card-label">Teams</p>
                         <h3 class="pricing-card-title">Voor teams die vastlopen in hun eigen perspectieven</h3>
-                        <p class="pricing-setup">Intake &amp; kalibratie: <s>&euro;995</s> <span class="pricing-beta">&euro;497,50 beta</span></p>
-                        <p class="pricing-amount">&euro;195</p>
-                        <p class="pricing-period">per maand</p>
+                        <p class="pricing-amount"><s class="pricing-standard">&euro;395</s> &euro;195</p>
+                        <p class="pricing-period">per maand &middot; founding rate, vast voor het leven</p>
+                        <p class="pricing-value">&euro;2.400 aan experts per jaar, inbegrepen</p>
+                        <p class="pricing-note">Plus &euro;995 intake &amp; kalibratie, eenmalig. <span class="pricing-free">Gratis als jullie eerste sessie niet raak is.</span></p>
                         <ul class="pricing-features">
                             <li>3&ndash;5 intake-gesprekken met sleutelfiguren</li>
-                            <li>Experts + vormen (Raad, Spiegel, Toekomsten)</li>
+                            <li>Je raad, plus vormen (Raad, Spiegel, Toekomsten)</li>
+                            <li>Twaalf nieuwe experts per jaar, ruil of groei tot acht</li>
+                            <li>Roep een gerichte raad bijeen voor &eacute;&eacute;n besluit</li>
                             <li>Heel het team heeft toegang</li>
-                            <li>Experts die jullie situatie kennen</li>
                         </ul>
-                        <a href="#aanmelden" class="cta-button">Aanmelden voor de beta &rarr;</a>
+                        <a href="#aanmelden" class="cta-button">Aanmelden voor een founding-zetel &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -193,9 +250,9 @@
         <section id="aanmelden" class="pilot-section">
             <div class="container">
                 <p class="section-label">Beta</p>
-                <h2 class="section-title">De eerste 10. Halve prijs voor je kalibratie.</h2>
-                <p class="pilot-description">We openen Growth Intel voor de eerste 10 ondernemers en teams. Je intake en kalibratie voor de halve prijs, daarna het maandtarief zoals vermeld. In ruil geef je ons je eerlijke feedback terwijl we bouwen.</p>
-                <a href="#aanmelden" class="cta-button">Aanmelden voor de beta &rarr;</a>
+                <h2 class="section-title">Tien founding-zetels. Op aanvraag.</h2>
+                <p class="pilot-description">We openen Growth Intel voor de eerste tien ondernemers en teams. Je legt de founding rate vast zolang je blijft, krijgt een directe lijn met Peter terwijl we bouwen, en je raad groeit elke maand. De intake is gegarandeerd: verandert je eerste sessie geen vraag die je stelt, dan is hij gratis. In ruil: je eerlijke feedback.</p>
+                <a href="#aanmelden" class="cta-button">Aanmelden voor een founding-zetel &rarr;</a>
             </div>
         </section>
 
@@ -215,6 +272,27 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    (function () {
+        if (!('IntersectionObserver' in window)) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var sel = '.section-label, .section-title, .section-intro, .step, .voice-item, .board-item, .board-value, .conversation-exchange, .pricing-card, .pilot-description, .about-block, .hero-content > *';
+        var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+        ['.step', '.voice-item', '.board-item', '.pricing-card'].forEach(function (s) {
+            Array.prototype.forEach.call(document.querySelectorAll(s), function (el, i) {
+                el.style.transitionDelay = (i * 0.08) + 's';
+            });
+        });
+        els.forEach(function (el) { el.classList.add('reveal'); });
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
 
 </body>
 </html>
