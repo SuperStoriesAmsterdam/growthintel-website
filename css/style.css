@@ -202,8 +202,33 @@ section {
     padding-top: var(--space-16);
 }
 
+.hero {
+    position: relative;
+}
+
 .hero-content {
     max-width: 800px;
+}
+
+.hero-scroll-cue {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--text-2xl);
+    line-height: 1;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    animation: hero-cue-bob 2s ease-in-out infinite;
+}
+
+.hero-scroll-cue:hover {
+    color: var(--color-accent);
+}
+
+@keyframes hero-cue-bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(6px); }
 }
 
 .hero-title {
@@ -331,7 +356,7 @@ section {
 /* === EXAMPLE CONVERSATION === */
 .conversation {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .conversation-exchange {

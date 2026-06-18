@@ -6,9 +6,9 @@
     --color-bg:         #0a0a0a;
     --color-surface:    #111111;
     --color-text:       #ffffff;
-    --color-text-muted: #ffffff;
+    --color-text-muted: #a3a3a3;
     --color-accent:     #c53a3a;
-    --color-border:     #1e1e1e;
+    --color-border:     #2a2a2a;
 
     /* Typography — Families */
     --font-brand:   'Montserrat', -apple-system, sans-serif;  /* merknaam "GROWTH INTEL" only */
