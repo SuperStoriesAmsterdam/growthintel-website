@@ -9,8 +9,10 @@
     --color-text-muted: #908a7e;  /* warm grey for secondary copy */
     --color-text-faint: #5c574e;  /* faintest tier — micro labels, meta */
     --color-accent:     #c53a3a;
+    --color-gold:       #cda35a;  /* complementary accent — value, counsel, flourishes */
     --color-border:     #232220;  /* warm hairline */
     --color-border-lit: #34322e;  /* hover / emphasis hairline */
+    --color-raise:      #16120c;  /* warm-lifted section band, for rhythm */
 
     /* Typography — Families */
     --font-brand:   'Montserrat', -apple-system, sans-serif;            /* micro labels, eyebrows, UI */

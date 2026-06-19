@@ -997,3 +997,61 @@ a:focus-visible,
     .cb-text { font-size: 1.15rem; }
     .council-feed { min-height: 280px; }
 }
+
+/* === BRAND REFRESH — complementary gold, lifted bands, warmer glows ==== */
+
+/* Section rhythm: alternate deep-black and a warm-lifted band so the page
+   stops being one flat slab. Dividers still separate; bands add diversity. */
+.section--raise { background-color: var(--color-raise); }
+
+/* Gold as the second voice — value figures, step numerals, small flourishes.
+   Red stays primary (CTAs, key underlines, council rail, active tab). */
+.step-number { color: var(--color-gold); }
+.board-value strong { color: var(--color-gold); }
+.pricing-value { color: var(--color-gold); }
+
+/* Hero: dual red + gold wash for depth and warmth */
+.hero::before {
+    background:
+        radial-gradient(52% 48% at 28% 34%, rgba(197, 58, 58, 0.16), transparent 70%),
+        radial-gradient(44% 44% at 82% 72%, rgba(205, 163, 90, 0.10), transparent 72%);
+}
+
+/* A faint gold hairline under section eyebrows, for a touch of craft */
+.section-label {
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(205, 163, 90, 0.35);
+}
+
+/* Pricing: setup + intake fee sits ON TOP, prominent, then the monthly */
+.pricing-setup-fee {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+.pricing-fee-amt {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text);
+}
+.pricing-fee-note { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-faint); }
+.pricing-per { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); }
+
+/* Application section price line */
+.pilot-price {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 2;
+    margin: 0 auto var(--space-4);
+    max-width: 600px;
+}
+.pilot-price strong { color: var(--color-text); font-weight: var(--weight-semibold); }
