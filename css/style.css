@@ -1059,3 +1059,37 @@ a:focus-visible,
 /* Gold lean-in: the big setup figure + a premium gold strip on the board */
 .pricing-fee-amt { color: var(--color-gold); }
 .council-board { border-top: 2px solid rgba(205, 163, 90, 0.5); }
+
+/* Founding-rate line — the visible beta discount */
+.pricing-founding {
+    font-family: var(--font-brand);
+    font-size: 10px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+}
+
+/* Founder-terms box — the beta offer, stated plainly */
+.founder-terms {
+    max-width: 560px;
+    margin: 0 auto var(--space-4);
+    border: 1px solid var(--color-border-lit);
+    border-top: 2px solid var(--color-gold);
+    border-radius: 10px;
+    background: var(--color-surface);
+    padding: var(--space-4) var(--space-4) var(--space-3);
+    text-align: left;
+}
+.founder-terms-lead { color: var(--color-text); font-size: var(--text-base); margin-bottom: var(--space-2); }
+.founder-terms ul { list-style: none; padding: 0; margin: 0 0 var(--space-3); }
+.founder-terms li {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.founder-terms li:last-child { border-bottom: none; color: var(--color-text-muted); }
+.founder-terms li::before { content: "\2713\00a0\00a0"; color: var(--color-gold); }
+.founder-normal { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; }
