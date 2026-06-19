@@ -1,4 +1,4 @@
-/* site.js — Growth Intel: scroll-reveal + the live council demo */
+/* site.js · Growth Intel: scroll-reveal + the live council demo */
 (function () {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -112,4 +112,20 @@
     } else {
         play(0, reduce);
     }
+})();
+
+/* Beta application form, interim mailto delivery (swap to GHL later) */
+(function () {
+    var form = document.getElementById('betaForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var to = form.getAttribute('data-recipient') || '';
+        var subject = form.getAttribute('data-subject') || 'Growth Intel application';
+        var get = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+        var body = 'Name: ' + get('name') + '\nEmail: ' + get('email') + '\n\n' + get('pitch');
+        var note = document.getElementById('betaFormNote');
+        if (note) note.hidden = false;
+        window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
 })();

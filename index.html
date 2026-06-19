@@ -297,7 +297,22 @@
                     <p class="founder-normal">Normally &euro;999 setup + &euro;99/mo (Solo) &middot; &euro;2,500 setup + &euro;395/mo (Team)</p>
                 </div>
                 <p class="pilot-description">What we ask back is simple: use it, tell us where it works and where it gets in your way, and if it earns its place, a few honest words we can share. We pick founders who make real decisions every week and will actually use it. Not the idea stage, not "maybe later."</p>
-                <a href="#signup" class="cta-button">Apply for a founding seat &rarr;</a>
+                <form class="beta-form" id="betaForm" data-recipient="peter@superstories.com" data-subject="Growth Intel founding seat application">
+                    <div class="beta-field">
+                        <label for="bf-name">Your name</label>
+                        <input type="text" id="bf-name" name="name" required>
+                    </div>
+                    <div class="beta-field">
+                        <label for="bf-email">Email</label>
+                        <input type="email" id="bf-email" name="email" required>
+                    </div>
+                    <div class="beta-field">
+                        <label for="bf-pitch">Where would you want a council on call, 24/7, and what makes you a good founder for this beta?</label>
+                        <textarea id="bf-pitch" name="pitch" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Apply for a founding seat &rarr;</button>
+                    <p class="beta-form-note" id="betaFormNote" hidden>Thanks. Your mail app will open so you can send it, and we'll take it from there.</p>
+                </form>
             </div>
         </section>
 

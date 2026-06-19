@@ -297,7 +297,22 @@
                     <p class="founder-normal">Normaal &euro;999 setup + &euro;99/maand (Solo) &middot; &euro;2.500 setup + &euro;395/maand (Team)</p>
                 </div>
                 <p class="pilot-description">Wat we terugvragen is simpel: gebruik het, vertel ons waar het werkt en waar het je in de weg zit, en als het zijn plek verdient, een paar eerlijke woorden die we mogen delen. We kiezen ondernemers die elke week echte beslissingen nemen en het ook echt gaan gebruiken. Niet de ideefase, niet "misschien later."</p>
-                <a href="#aanmelden" class="cta-button">Aanmelden voor een founding-zetel &rarr;</a>
+                <form class="beta-form" id="betaForm" data-recipient="peter@superstories.com" data-subject="Growth Intel aanmelding founding-zetel">
+                    <div class="beta-field">
+                        <label for="bf-name">Je naam</label>
+                        <input type="text" id="bf-name" name="name" required>
+                    </div>
+                    <div class="beta-field">
+                        <label for="bf-email">E-mail</label>
+                        <input type="email" id="bf-email" name="email" required>
+                    </div>
+                    <div class="beta-field">
+                        <label for="bf-pitch">Waar zou je een raad 24/7 paraat willen hebben, en wat maakt jou een goede founder voor deze beta?</label>
+                        <textarea id="bf-pitch" name="pitch" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Aanmelden voor een founding-zetel &rarr;</button>
+                    <p class="beta-form-note" id="betaFormNote" hidden>Bedankt. Je mailprogramma opent zodat je het kunt versturen, daarna pakken wij het op.</p>
+                </form>
             </div>
         </section>
 
