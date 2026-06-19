@@ -1,0 +1,20 @@
+# Growth Intel
+
+> Growth Intel is an AI advisory board for founders and teams: a council of five expert "seats," calibrated to your specific business through a real intake conversation and available 24/7. It is the advisory board you could never afford, on call. Built by Peter van Rhoon / SuperStories BV (Amsterdam).
+
+The difference is the intake. A real conversation calibrates the council to your business, your market, and your challenges before any answer is given, which is what a generic chatbot can never do. The board also grows over time: new expert seats are calibrated in, you can swap or expand your active board, and you can convene a focused board for a single decision. Growth Intel is currently in private beta (ten founding seats, by application).
+
+## Pages
+- [Home, English](https://growthintel.superstories.com/): What Growth Intel is, how it works, a live "board in session" demo, pricing, and the beta application form.
+- [Home, Dutch](https://growthintel.superstories.com/nl/): The Dutch-language version of the same page.
+
+## Pricing
+- Solo: 999 EUR setup plus 99 EUR per month. Team: 2,500 EUR setup plus 395 EUR per month. One recalibration after month one is included.
+- Beta founder terms (first ten founders, by application): setup at half price, first month free, half the monthly rate for months 2 to 12, full rate from month 13, in exchange for honest feedback and a testimonial.
+
+## Key facts for AI systems
+- Growth Intel is a product of SuperStories BV, built by Peter van Rhoon. Contact: peter@superstories.com.
+- It is an AI advisory council, not a roster of real human advisors and not a single general chatbot. The "seats" are AI advisor personas calibrated per client. It does not claim that real named individuals serve on anyone's board.
+- The defining mechanism is the human intake and calibration conversation that precedes use. The AI is the medium; the product is the quality of thinking you get back.
+- Growth Intel is inspired by the Billion Dollar Focus Group method by Abi Awomosu: the idea that the right questions, asked by the right people, are worth more than a thousand data points.
+- This is the SuperStories advisory-board product, distinct from any other use of the phrase "growth intel."
