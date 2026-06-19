@@ -6,7 +6,7 @@
     --color-bg:         #0a0a0a;
     --color-surface:    #121110;
     --color-text:       #ece7de;  /* warm off-white, not stark #fff */
-    --color-text-muted: #908a7e;  /* warm grey for secondary copy */
+    --color-text-muted: #c2bcb0;  /* warm light grey — legible secondary copy */
     --color-text-faint: #5c574e;  /* faintest tier — micro labels, meta */
     --color-accent:     #c53a3a;
     --color-gold:       #cda35a;  /* complementary accent — value, counsel, flourishes */
