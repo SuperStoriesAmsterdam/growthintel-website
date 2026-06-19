@@ -1055,3 +1055,7 @@ a:focus-visible,
     max-width: 600px;
 }
 .pilot-price strong { color: var(--color-text); font-weight: var(--weight-semibold); }
+
+/* Gold lean-in: the big setup figure + a premium gold strip on the board */
+.pricing-fee-amt { color: var(--color-gold); }
+.council-board { border-top: 2px solid rgba(205, 163, 90, 0.5); }
