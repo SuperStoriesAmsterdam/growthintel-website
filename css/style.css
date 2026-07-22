@@ -962,6 +962,50 @@ a:focus-visible,
     color: var(--color-text);
 }
 
+/* "24/7 on call." is the second sentence of the headline. Kept in the h1 for
+   meaning, but dropped out of display scale and onto its own line, because at
+   hero size it pushed the headline to five lines and the CTA below the fold. */
+.hero-oncall {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-style: italic;
+    line-height: 1.1;
+    color: var(--color-accent);
+}
+
+/* Hero lines — the intro is written as separate beats, so it is set as a
+   stack of short statements rather than a paragraph. Tight leading keeps the
+   stack reading as one block instead of seven loose sentences. */
+.hero-lines {
+    margin-bottom: var(--space-4);
+    max-width: 38em;
+}
+.hero-line {
+    font-size: var(--text-base);
+    line-height: 1.45;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+}
+.hero-line:last-child { margin-bottom: 0; }
+
+/* The opening claim carries more weight than the lines that explain it */
+.hero-line--lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.25;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+/* The sign-off lands on the brand */
+.hero-line--close {
+    margin-top: var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+}
+
 /* Pricing card, reworked. The tier name now carries the weight and the
    description became a full sentence, so it drops to supporting size. The
    price gets a band of its own so the three options compare at a glance. */
