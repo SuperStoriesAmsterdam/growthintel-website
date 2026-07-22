@@ -6,8 +6,12 @@
  *
  * Order of precedence:
  *   1. an explicit choice, remembered in localStorage
- *   2. the operating system's setting
- *   3. night, which is the brand's home key
+ *   2. night
+ *
+ * Night is the default for everyone, deliberately. The operating system's
+ * light/dark setting is NOT consulted: this is the brand's home key, and a
+ * visitor on a Mac in light mode should still arrive in night. Day is
+ * something you choose, not something your laptop chooses for you.
  *
  * An explicit choice always writes data-theme, so the rest of the CSS and the
  * toggle's own label never have to guess what is currently showing.
@@ -21,7 +25,7 @@
             var saved = localStorage.getItem(KEY);
             if (saved === 'day' || saved === 'night') return saved;
         } catch (e) { /* private mode, fall through */ }
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'night';
+        return 'night';
     }
 
     function apply(mode) {
@@ -49,14 +53,5 @@
             });
         }
 
-        /* Follow the system if the visitor has never chosen for themselves */
-        var mq = window.matchMedia('(prefers-color-scheme: light)');
-        var onChange = function (e) {
-            var chosen = null;
-            try { chosen = localStorage.getItem(KEY); } catch (err) { /* ignore */ }
-            if (!chosen) apply(e.matches ? 'day' : 'night');
-        };
-        if (mq.addEventListener) mq.addEventListener('change', onChange);
-        else if (mq.addListener) mq.addListener(onChange);
     });
 })();

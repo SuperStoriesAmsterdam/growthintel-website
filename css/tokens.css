@@ -66,30 +66,10 @@
     --color-on-btn:      #ffffff;
 }
 
-/* Visitors who have never chosen get their system setting. An explicit
-   choice writes data-theme, and the rules above win over this one. */
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme]) {
-        --color-bg:         #f4f1ea;
-        --color-surface:    #ebe6db;
-        --color-raise:      #e6e0d2;
-        --color-text:       #17150f;
-        --color-text-muted: #4a4438;
-        --color-text-faint: #6b6454;
-        --color-accent:     #a32828;
-        --color-gold:       #7a5c18;
-        --color-border:     #d7d0c1;
-        --color-border-lit: #b9b09c;
-        --color-header-veil: rgba(244, 241, 234, 0.92);
-        --color-bloom-warm:  rgba(163, 40, 40, 0.07);
-        --color-bloom-cool:  rgba(122, 92, 24, 0.05);
-        --color-bloom-gold:  rgba(122, 92, 24, 0.07);
-        --color-rule-gold:   rgba(122, 92, 24, 0.35);
-        --color-btn:         #a32828;
-        --color-btn-hover:   #8c2020;
-        --color-on-btn:      #ffffff;
-    }
-}
+/* No prefers-color-scheme fallback on purpose. Night is the default for
+   everyone, including visitors whose system is set to light and visitors with
+   JavaScript off, who get the bare :root above. Day is a choice you make with
+   the button, not one your laptop makes for you. */
 
 :root {
 
