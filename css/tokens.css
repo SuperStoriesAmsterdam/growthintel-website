@@ -1,18 +1,97 @@
 /* tokens.css — Growth Intel Design Tokens */
 /* Source of truth for all visual values. Never hardcode these elsewhere. */
 
+/* ==========================================================================
+   COLOUR — two modes, one system.
+
+   Day   warm paper. The document.
+   Night deep night blue. Not grey, not black: a chosen colour.
+
+   Both are complete palettes, switched by [data-theme] on <html>. Nothing
+   else in the codebase should reference a raw colour. Values that used to be
+   hardcoded in style.css (the header veil, the hero blooms, the button fill)
+   are tokens now, because they have to differ per mode.
+
+   Every text value clears WCAG AA against its own ground in both modes.
+   ========================================================================== */
+
+/* NIGHT — the default, and the brand's home key */
+:root,
+:root[data-theme="night"] {
+    --color-bg:         #0a1124;  /* night blue */
+    --color-surface:    #131c35;
+    --color-raise:      #1c2949;  /* 1.31:1 against bg — a step you can see */
+    --color-text:       #e9ecf4;  /* 15.9:1 */
+    --color-text-muted: #b6bfd4;  /* 10.2:1 */
+    --color-text-faint: #8b95ae;  /*  6.3:1 */
+    --color-accent:     #e2594a;  /*  5.2:1 — safe as small text */
+    --color-gold:       #d0a93a;  /*  8.4:1 — carries every label */
+    --color-border:     #1e2740;
+    --color-border-lit: #35415f;
+
+    /* Values that used to be hardcoded */
+    --color-header-veil: rgba(10, 17, 36, 0.92);
+    --color-bloom-warm:  rgba(226, 89, 74, 0.10);
+    --color-bloom-cool:  rgba(53, 82, 150, 0.28);
+    --color-bloom-gold:  rgba(208, 169, 58, 0.07);
+    --color-rule-gold:   rgba(208, 169, 58, 0.35);
+
+    /* White on the signal red is under 4.5, so the button takes its own red */
+    --color-btn:         #c9463a;  /* white on this = 4.75:1 */
+    --color-btn-hover:   #b83a2c;
+    --color-on-btn:      #ffffff;
+}
+
+/* DAY — warm paper */
+:root[data-theme="day"] {
+    --color-bg:         #f4f1ea;  /* warm paper, not clinical white */
+    --color-surface:    #ebe6db;
+    --color-raise:      #e6e0d2;
+    --color-text:       #17150f;  /* 16.2:1 */
+    --color-text-muted: #4a4438;  /*  8.6:1 */
+    --color-text-faint: #6b6454;  /*  5.2:1 */
+    --color-accent:     #a32828;  /*  6.4:1 */
+    --color-gold:       #7a5c18;  /*  5.5:1 */
+    --color-border:     #d7d0c1;
+    --color-border-lit: #b9b09c;
+
+    --color-header-veil: rgba(244, 241, 234, 0.92);
+    --color-bloom-warm:  rgba(163, 40, 40, 0.07);
+    --color-bloom-cool:  rgba(122, 92, 24, 0.05);
+    --color-bloom-gold:  rgba(122, 92, 24, 0.07);
+    --color-rule-gold:   rgba(122, 92, 24, 0.35);
+
+    --color-btn:         #a32828;  /* white on this = 7.26:1 */
+    --color-btn-hover:   #8c2020;
+    --color-on-btn:      #ffffff;
+}
+
+/* Visitors who have never chosen get their system setting. An explicit
+   choice writes data-theme, and the rules above win over this one. */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --color-bg:         #f4f1ea;
+        --color-surface:    #ebe6db;
+        --color-raise:      #e6e0d2;
+        --color-text:       #17150f;
+        --color-text-muted: #4a4438;
+        --color-text-faint: #6b6454;
+        --color-accent:     #a32828;
+        --color-gold:       #7a5c18;
+        --color-border:     #d7d0c1;
+        --color-border-lit: #b9b09c;
+        --color-header-veil: rgba(244, 241, 234, 0.92);
+        --color-bloom-warm:  rgba(163, 40, 40, 0.07);
+        --color-bloom-cool:  rgba(122, 92, 24, 0.05);
+        --color-bloom-gold:  rgba(122, 92, 24, 0.07);
+        --color-rule-gold:   rgba(122, 92, 24, 0.35);
+        --color-btn:         #a32828;
+        --color-btn-hover:   #8c2020;
+        --color-on-btn:      #ffffff;
+    }
+}
+
 :root {
-    /* Colors — matched to the Growth Intel council board (warm, editorial dark) */
-    --color-bg:         #0a0a0a;
-    --color-surface:    #121110;
-    --color-text:       #ece7de;  /* warm off-white, not stark #fff */
-    --color-text-muted: #c2bcb0;  /* warm light grey — legible secondary copy */
-    --color-text-faint: #5c574e;  /* faintest tier — micro labels, meta */
-    --color-accent:     #c53a3a;
-    --color-gold:       #cda35a;  /* complementary accent — value, counsel, flourishes */
-    --color-border:     #232220;  /* warm hairline */
-    --color-border-lit: #34322e;  /* hover / emphasis hairline */
-    --color-raise:      #16120c;  /* warm-lifted section band, for rhythm */
 
     /* Typography — Families */
     --font-brand:   'Montserrat', -apple-system, sans-serif;            /* micro labels, eyebrows, UI */

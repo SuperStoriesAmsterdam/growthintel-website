@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap">
-    <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js?v=1784733975"></script>
+    <link rel="stylesheet" href="css/tokens.css?v=1784733975">
+    <link rel="stylesheet" href="css/style.css?v=1784733975">
 </head>
 <body>
 
@@ -24,6 +25,18 @@
                 <span class="site-logo-sub">by SuperStories</span>
             </a>
             <nav class="nav-right">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch colour mode">
+                    <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
+                        <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                            <path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8"/>
+                        </g>
+                    </svg>
+                    <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+                        <path d="M20.1 14.3A8.3 8.3 0 0 1 9.7 3.9a8.5 8.5 0 1 0 10.4 10.4z" fill="currentColor"/>
+                    </svg>
+                    <span class="theme-label">Night</span>
+                </button>
                 <a href="/nl/" class="lang-switch">NL</a>
                 <a href="#signup" class="header-cta">Apply for a seat</a>
             </nav>
@@ -378,7 +391,7 @@
         </div>
     </footer>
 
-    <script src="js/site.js" defer></script>
+    <script src="js/site.js?v=1784733975" defer></script>
 
     <!-- Review annotation tool. Remove this config + include before final production deployment. -->
     <script>window.SS_ANNOTATIONS={api:"https://annotations.superstories.com",project:"growthintel"};</script>

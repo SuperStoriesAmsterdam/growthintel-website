@@ -108,7 +108,7 @@ section {
     right: 0;
     z-index: 100;
     padding: var(--space-3) 0;
-    background-color: rgba(10, 10, 10, 0.9);
+    background-color: var(--color-header-veil);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -152,6 +152,47 @@ section {
     gap: var(--space-3);
 }
 
+/* Day / night setting. Sits with the language switch, because both are the
+   same kind of control: how you want to read the page, not what it says. */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: none;
+    border: 1px solid var(--color-border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+.theme-toggle:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+}
+.theme-icon { display: none; }
+:root[data-theme="night"] .theme-icon--moon { display: block; }
+:root[data-theme="day"]   .theme-icon--sun  { display: block; }
+
+/* The label is the mode you are in, so it is set by theme.js, not by CSS */
+.theme-label { line-height: 1; }
+
+@media (max-width: 480px) {
+    /* Keep the icon, drop the word, so the header still fits */
+    .theme-label { display: none; }
+}
+
+/* Deliberately NO transition on the mode switch.
+   Day and night are inversions, so a cross-fade drags every value through the
+   middle at the same time: light text and dark ground meet as mid-grey on
+   mid-grey and the copy is briefly unreadable. Verified on screen. An instant
+   swap is both more legible and how every other theme toggle behaves. */
+
 .lang-switch {
     font-family: var(--font-body);
     font-size: var(--text-xs);
@@ -175,8 +216,8 @@ section {
     font-size: var(--text-xs);
     font-weight: var(--weight-semibold);
     letter-spacing: 0.04em;
-    color: #ffffff;
-    background-color: var(--color-accent);
+    color: var(--color-on-btn);
+    background-color: var(--color-btn);
     padding: 8px 20px;
     border-radius: 4px;
     transition: opacity var(--transition-base);
@@ -184,8 +225,8 @@ section {
 }
 
 .header-cta:hover {
-    color: #ffffff;
-    opacity: 0.85;
+    color: var(--color-on-btn);
+    background-color: var(--color-btn-hover);
 }
 
 @media (min-width: 768px) {
@@ -264,16 +305,16 @@ section {
     font-size: var(--text-sm);
     font-weight: var(--weight-semibold);
     letter-spacing: 0.02em;
-    color: #ffffff;
-    background-color: var(--color-accent);
+    color: var(--color-on-btn);
+    background-color: var(--color-btn);
     padding: 16px 36px;
     border-radius: 4px;
     transition: opacity var(--transition-base);
 }
 
 .cta-button:hover {
-    color: #ffffff;
-    opacity: 0.85;
+    color: var(--color-on-btn);
+    background-color: var(--color-btn-hover);
 }
 
 /* === SECTION HEADERS === */
@@ -402,8 +443,8 @@ section {
     font-weight: var(--weight-semibold);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #ffffff;
-    background-color: var(--color-accent);
+    color: var(--color-on-btn);
+    background-color: var(--color-btn);
     padding: 2px 8px;
     border-radius: 3px;
     margin-left: var(--space-1);
@@ -644,7 +685,7 @@ a:focus-visible,
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(55% 50% at 32% 38%, rgba(197, 58, 58, 0.12), transparent 70%);
+    background: radial-gradient(55% 50% at 32% 38%, var(--color-bloom-warm), transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -667,7 +708,7 @@ a:focus-visible,
 .step:hover,
 .pricing-card:hover {
     transform: translateY(-3px);
-    border-color: #3a3a3a;
+    border-color: var(--color-border-lit);
 }
 
 /* Editorial step numbers: larger, quieter, sitting like a watermark */
@@ -730,7 +771,7 @@ a:focus-visible,
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(50% 70% at 50% 0%, rgba(197, 58, 58, 0.10), transparent 70%);
+    background: radial-gradient(50% 70% at 50% 0%, var(--color-bloom-warm), transparent 70%);
     pointer-events: none;
 }
 
@@ -1342,15 +1383,16 @@ a:focus-visible,
 /* Hero: dual red + gold wash for depth and warmth */
 .hero::before {
     background:
-        radial-gradient(52% 48% at 28% 34%, rgba(197, 58, 58, 0.16), transparent 70%),
-        radial-gradient(44% 44% at 82% 72%, rgba(205, 163, 90, 0.10), transparent 72%);
+        radial-gradient(52% 48% at 28% 34%, var(--color-bloom-warm), transparent 70%),
+        radial-gradient(50% 50% at 78% 24%, var(--color-bloom-cool), transparent 72%),
+        radial-gradient(44% 44% at 82% 76%, var(--color-bloom-gold), transparent 72%);
 }
 
 /* A faint gold hairline under section eyebrows, for a touch of craft */
 .section-label {
     display: inline-block;
     padding-bottom: 6px;
-    border-bottom: 1px solid rgba(205, 163, 90, 0.35);
+    border-bottom: 1px solid var(--color-rule-gold);
 }
 
 /* Pricing: setup + intake fee sits ON TOP, prominent, then the monthly */
