@@ -474,8 +474,8 @@ section {
 
 @media (min-width: 768px) {
     .pricing-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-4);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-3);
     }
 }
 
@@ -572,6 +572,15 @@ section {
 }
 
 /* === FOOTER === */
+.footer-payoff {
+    margin-bottom: var(--space-6);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.3;
+    color: var(--color-text-muted);
+}
+
 .site-footer {
     padding: var(--space-8) 0;
     border-top: 1px solid var(--color-border);
@@ -779,27 +788,6 @@ a:focus-visible,
 }
 .board-value strong { color: var(--color-accent); font-style: normal; font-weight: 600; }
 
-/* Voices — the questions your board asks */
-.voices { display: flex; flex-direction: column; gap: var(--space-8); max-width: 920px; margin: 0 auto; }
-.voice-text {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
-    line-height: 1.25;
-    color: var(--color-text);
-}
-.voice-attr {
-    margin-top: var(--space-2);
-    font-family: var(--font-brand);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-}
-.voice-item:nth-child(even) { align-self: flex-end; text-align: right; }
-
 /* Pricing extras */
 .pricing-standard {
     font-family: var(--font-display);
@@ -817,6 +805,303 @@ a:focus-visible,
 }
 .pricing-note { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); line-height: 1.6; }
 .pricing-note .pricing-free { color: var(--color-text); font-weight: var(--weight-medium); }
+
+/* Testimonials — the proof band, sitting directly under the hero.
+   Quote cards with a gold opening mark; the strongest social signal on the page. */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+@media (min-width: 768px) {
+    .testimonials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.testimonial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5) var(--space-4) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: var(--color-surface);
+    transition: transform var(--transition-base), border-color var(--transition-base);
+}
+.testimonial:hover { transform: translateY(-3px); border-color: var(--color-border-lit); }
+.testimonial::before {
+    content: "\201C";
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 0.6;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: var(--space-2);
+}
+.testimonial-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+    flex-grow: 1;
+    overflow-wrap: anywhere;
+}
+.testimonial-attr {
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+.testimonial-role {
+    display: block;
+    margin-top: 3px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-faint);
+}
+.testimonials-note {
+    margin-top: var(--space-6);
+    text-align: center;
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    color: var(--color-text-faint);
+}
+
+/* Featured single testimonial — one strong quote, centred and enlarged */
+.testimonial--featured {
+    max-width: 820px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-6);
+}
+.testimonial--featured .testimonial-quote {
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    line-height: 1.35;
+    flex-grow: 0;
+    margin-bottom: var(--space-4);
+}
+.testimonial--featured .testimonial-attr {
+    font-size: var(--text-sm);
+    letter-spacing: 0.16em;
+}
+
+/* Pillars — the three beats of the payoff, carried as the page's spine */
+/* minmax(0, 1fr) so a long word can never widen one column past its siblings */
+.pillars {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+@media (min-width: 768px) {
+    .pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+}
+.pillar {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-lit);
+}
+.pillar-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-medium);
+    line-height: 1.15;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+    overflow-wrap: anywhere;
+}
+.pillar p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* The trap — what the alternatives cost you */
+.trap-list {
+    list-style: none;
+    max-width: 52em;
+    margin-top: var(--space-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+.trap-list li {
+    position: relative;
+    padding-left: var(--space-4);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+.trap-list li::before {
+    content: "\00d7";
+    position: absolute;
+    left: 0;
+    color: var(--color-text-faint);
+}
+.trap-close {
+    max-width: 52em;
+    margin-top: var(--space-8);
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    line-height: 1.35;
+    color: var(--color-text);
+}
+
+/* Value arithmetic — the subscription maths, stated as two plain lines */
+.value-maths {
+    max-width: 44em;
+    margin: var(--space-12) auto 0;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border-lit);
+    text-align: center;
+}
+.value-maths-line {
+    font-family: var(--font-brand);
+    font-size: var(--text-lg);
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+.value-maths-line strong {
+    color: var(--color-accent);
+    font-weight: var(--weight-semibold);
+}
+.value-maths-line:last-of-type { margin-bottom: 0; }
+.value-maths-note {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-faint);
+}
+
+/* Lead prose — running body copy in a narrative section */
+.lead-prose {
+    max-width: 46em;
+    margin-top: var(--space-6);
+}
+.lead-prose p {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+}
+.lead-prose p:last-child { margin-bottom: 0; }
+
+/* Comparison table — generic AI against Growth Intel */
+.compare {
+    width: 100%;
+    margin-top: var(--space-8);
+    border-collapse: collapse;
+    text-align: left;
+}
+.compare th {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border-lit);
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+}
+.compare th:last-child { color: var(--color-accent); }
+.compare td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    vertical-align: top;
+}
+.compare td:last-child { color: var(--color-text); }
+/* Equal columns: minmax-equivalent for tables, so one cell cannot widen the other */
+.compare th, .compare td { width: 50%; }
+
+/* On small screens the table becomes stacked pairs */
+@media (max-width: 767px) {
+    .compare thead { display: none; }
+    .compare, .compare tbody, .compare tr, .compare td { display: block; width: 100%; }
+    .compare tr { margin-bottom: var(--space-6); }
+    .compare td { border-bottom: none; padding: var(--space-2) 0; }
+    .compare td:first-child { color: var(--color-text-faint); }
+    .compare td:last-child { border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-4); }
+}
+
+.pull-quote {
+    max-width: 40em;
+    margin: var(--space-8) auto 0;
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    line-height: 1.35;
+    color: var(--color-text);
+}
+
+/* Scope list — topic areas the council covers */
+.scope-list {
+    list-style: none;
+    margin-top: var(--space-8);
+    max-width: 52em;
+}
+.scope-item {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+.scope-item strong {
+    display: block;
+    margin-bottom: var(--space-1);
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+/* Boundaries — what Growth Intel deliberately is not */
+.not-block {
+    margin-top: var(--space-12);
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    max-width: 52em;
+}
+.not-title {
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    margin-bottom: var(--space-4);
+}
+.not-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+.not-list li {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    padding-left: var(--space-4);
+    position: relative;
+}
+.not-list li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--color-text-faint);
+}
 
 /* Scroll-reveal motion */
 .reveal {
@@ -840,164 +1125,6 @@ a:focus-visible,
     .reveal { opacity: 1 !important; transform: none !important; }
 }
 
-/* === COUNCIL DEMO — live "board in session" mock ==================== */
-.council-board {
-    max-width: 780px;
-    margin: var(--space-6) auto 0;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    background: #0c0b0a;
-    overflow: hidden;
-    box-shadow: 0 40px 90px -50px rgba(0, 0, 0, 0.9);
-}
-.council-board-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 16px 22px;
-    border-bottom: 1px solid var(--color-border);
-}
-.cb-product {
-    font-family: var(--font-brand);
-    font-size: 10px;
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-text);
-}
-.cb-client {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--color-text-muted);
-}
-.council-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    border-bottom: 1px solid var(--color-border);
-}
-.cb-tab {
-    appearance: none;
-    background: transparent;
-    border: none;
-    border-right: 1px solid var(--color-border);
-    padding: 12px 16px;
-    cursor: pointer;
-    position: relative;
-    font-family: var(--font-brand);
-    font-size: 9px;
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-text-faint);
-    transition: color var(--transition-base), background var(--transition-base);
-}
-.cb-tab:hover { color: var(--color-text-muted); background: rgba(255, 255, 255, 0.025); }
-.cb-tab.is-active { color: var(--color-text); background: rgba(255, 255, 255, 0.02); }
-.cb-tab.is-active::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 2px;
-    background: var(--color-accent);
-}
-.council-feed {
-    min-height: 250px;
-    padding: 26px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.cb-msg { max-width: 86%; animation: cb-fade 0.4s ease; }
-@keyframes cb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.cb-msg.user {
-    align-self: flex-end;
-    background: #17150f;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 10px 14px;
-    color: var(--color-text-muted);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
-.cb-msg.advisor {
-    align-self: flex-start;
-    border-left: 2px solid var(--color-accent);
-    padding-left: 18px;
-    color: var(--color-text);
-}
-.cb-name {
-    display: block;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.05rem;
-    color: var(--color-accent);
-    margin-bottom: 7px;
-}
-.cb-text {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    line-height: 1.4;
-}
-.cb-cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1.05em;
-    background: var(--color-accent);
-    margin-left: 3px;
-    vertical-align: -2px;
-    animation: cb-blink 1s steps(1) infinite;
-}
-@keyframes cb-blink { 50% { opacity: 0; } }
-.council-input {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 14px 18px;
-    background: var(--color-accent);
-}
-.cb-mic {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    flex-shrink: 0;
-    position: relative;
-}
-.cb-mic::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 11px; height: 11px;
-    border-radius: 50%;
-    background: #fff;
-}
-.cb-field {
-    flex: 1;
-    background: #fff;
-    border-radius: 3px;
-    padding: 11px 13px;
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    color: #8a8a8a;
-}
-.cb-send {
-    background: #fff;
-    color: #0a0a0a;
-    border-radius: 3px;
-    padding: 11px 18px;
-    font-family: var(--font-brand);
-    font-size: 9px;
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-@media (max-width: 600px) {
-    .cb-text { font-size: 1.15rem; }
-    .council-feed { min-height: 280px; }
-}
-
 /* === BRAND REFRESH — complementary gold, lifted bands, warmer glows ==== */
 
 /* Section rhythm: alternate deep-black and a warm-lifted band so the page
@@ -1005,7 +1132,7 @@ a:focus-visible,
 .section--raise { background-color: var(--color-raise); }
 
 /* Gold as the second voice — value figures, step numerals, small flourishes.
-   Red stays primary (CTAs, key underlines, council rail, active tab). */
+   Red stays primary (CTAs, key underlines). */
 .step-number { color: var(--color-gold); }
 .board-value strong { color: var(--color-gold); }
 .pricing-value { color: var(--color-gold); }
@@ -1056,9 +1183,8 @@ a:focus-visible,
 }
 .pilot-price strong { color: var(--color-text); font-weight: var(--weight-semibold); }
 
-/* Gold lean-in: the big setup figure + a premium gold strip on the board */
+/* Gold lean-in: the big setup figure */
 .pricing-fee-amt { color: var(--color-gold); }
-.council-board { border-top: 2px solid rgba(205, 163, 90, 0.5); }
 
 /* Founding-rate line — the visible beta discount */
 .pricing-founding {
