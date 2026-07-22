@@ -116,11 +116,13 @@ main section .section-label::before {
 .compare th:last-child,
 .compare td:last-child { border-right: none; }
 
-/* Scope reads as an index, not a list */
+/* Scope reads as an index, not a list. 18em matches the base sheet, and is
+   wide enough that the longest label ("Positioning & category") stays on
+   one line. */
 .scope-item {
     display: grid;
-    grid-template-columns: minmax(0, 14em) minmax(0, 1fr);
-    gap: var(--space-4);
+    grid-template-columns: minmax(0, 18em) minmax(0, 1fr);
+    gap: var(--space-6);
     align-items: baseline;
 }
 .scope-item strong { margin-bottom: 0; }

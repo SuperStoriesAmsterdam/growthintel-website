@@ -1,0 +1,78 @@
+/* ==========================================================================
+   ROUTE D — "Brief & Dossier"
+   Route C (midnight navy, numbered, ruled) combined with Route A (warm paper).
+
+   This file loads AFTER route-c.css and only does one thing: it turns the
+   middle of the page into paper. The page becomes three acts.
+
+     Act 1  navy    hero, the trap, how it works, the difference
+                    the problem and the promise, where atmosphere helps
+     Act 2  paper   what you can ask, pricing, the subscription
+                    the decision zone, where clarity beats mood
+     Act 3  navy    teams, about, apply
+                    back to atmosphere to close
+
+   The tokens below are Route A's paper palette verbatim, rescoped to the
+   three middle sections. Every value clears WCAG AA on the light ground.
+   ========================================================================== */
+
+#scope,
+#pricing,
+#evolves {
+    --color-bg:          #f4f1ea;
+    --color-surface:     #ebe6db;
+    --color-raise:       #ebe6db;
+    --color-text:        #17150f;   /* 16.2:1 on paper */
+    --color-text-muted:  #4a4438;   /* 8.6:1 */
+    --color-text-faint:  #6b6454;   /* 5.2:1 */
+    --color-accent:      #a32828;   /* 6.4:1, and white on it = 7.3:1 */
+    --color-gold:        #7a5c18;   /* 5.5:1 */
+    --color-border:      #d7d0c1;
+    --color-border-lit:  #b9b09c;
+
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* #pricing carries .section--raise from the base sheet. Inside the paper act
+   the whole block should read as one sheet, so the raise is neutralised and
+   the cards provide the only panel contrast. */
+#pricing.section--raise {
+    background-color: var(--color-bg);
+}
+
+/* Panels on paper sit slightly darker than the sheet, the inverse of dark mode */
+#scope .not-block,
+#pricing .pricing-card {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+}
+
+/* Buttons keep white on red. On this red that measures 7.3:1. */
+#pricing .cta-button {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+#pricing .cta-button:hover {
+    background-color: #8c2020;
+    border-color: #8c2020;
+}
+
+/* Route C draws hairline frames from --color-border-lit. They inherit the
+   paper values automatically, so the ruled character survives the flip. */
+
+/* --- The seams ----------------------------------------------------------- */
+
+/* Hard edges at the two act boundaries, so the change reads as authored
+   rather than as a rendering fault. */
+#scope { border-top: 1px solid var(--color-border-lit); }
+#evolves { border-bottom: 1px solid var(--color-border-lit); }
+
+/* The dividers that sit exactly on a boundary would draw a dark hairline
+   across the seam. Remove those two only; the ones between the paper
+   sections keep working and inherit the light border colour. */
+hr.section-divider:has(+ #scope),
+#evolves + hr.section-divider {
+    border-color: transparent;
+}
