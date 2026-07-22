@@ -1024,6 +1024,17 @@ a:focus-visible,
     color: var(--color-accent);
 }
 
+/* The rest of the intro, sitting just under the fold. No section padding at
+   the top: it should read as the hero continuing after the break, not as a
+   new section starting. */
+.hero-tail {
+    padding-top: 0;
+    padding-bottom: var(--space-12);
+}
+.hero-tail .hero-lines {
+    margin-bottom: 0;
+}
+
 /* Hero lines — the intro is written as separate beats, so it is set as a
    stack of short statements rather than a paragraph. Tight leading keeps the
    stack reading as one block instead of seven loose sentences. */

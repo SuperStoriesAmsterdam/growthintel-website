@@ -91,11 +91,10 @@
     --text-2xl:  1.875rem;
     --text-3xl:  2.5rem;
     --text-4xl:  clamp(2.75rem, 5.5vw, 4rem);
-    /* Sized so the whole hero clears the fold at 1440x900. The intro is seven
-       beats plus a payoff, and at 92px the headline alone took four lines and
-       47% of the fold, pushing the CTA 144px under. Only this one element was
-       resized; nothing else in the hero changed. */
-    --text-hero: clamp(2.5rem, 5.2vw, 4.5rem);
+    /* Five of the intro's beats moved below the fold, which bought the
+       headline its scale back. Sized by measurement so the hero still clears
+       the fold at 1440x900 with the CTA inside it. */
+    --text-hero: clamp(2.75rem, 6.2vw, 5.5rem);
 
     /* Typography — Weights */
     --weight-regular: 400;
