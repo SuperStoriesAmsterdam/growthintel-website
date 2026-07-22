@@ -1,0 +1,142 @@
+/* ==========================================================================
+   ROUTE C — "Brief"
+   Answers the note without abandoning the dark: the black stops feeling empty
+   because the page becomes visibly engineered. A cooler ground, a numbered
+   section system, hairline rules, and gold used systematically for every
+   signifier. Reads as a classified brief rather than a void.
+
+   Override file. index.html never loads this.
+   ========================================================================== */
+
+:root {
+    /* Cooler ground. The warm red then reads as the only heat on the page. */
+    --color-bg:          #0b0c0e;
+    --color-surface:     #151821;
+    --color-raise:       #212630;   /* visible step: 1.31:1 against bg */
+
+    /* Ink. On bg: text 15.2:1, muted 9.5:1, faint 6.1:1 (was 2.76:1, failed) */
+    --color-text:        #e8eaed;
+    --color-text-muted:  #b4b9c2;
+    --color-text-faint:  #8a909b;
+
+    --color-accent:      #d8564a;   /* action + large emphasis only */
+    --color-gold:        #c9a227;   /* every signifier, 8.1:1 on bg */
+
+    --color-border:      #23272f;
+    --color-border-lit:  #3a404b;
+}
+
+.site-header {
+    background-color: rgba(11, 12, 14, 0.9);
+    border-bottom: 1px solid var(--color-border-lit);
+}
+
+/* The bloom goes cooler and quieter; heat is reserved for signals */
+.hero::before {
+    background: radial-gradient(55% 50% at 32% 38%, rgba(216, 86, 74, 0.10), transparent 70%);
+}
+.pilot-section::before {
+    background: radial-gradient(50% 70% at 50% 0%, rgba(216, 86, 74, 0.08), transparent 70%);
+}
+.hero {
+    background:
+        radial-gradient(52% 48% at 28% 34%, rgba(216, 86, 74, 0.12), transparent 70%),
+        radial-gradient(44% 44% at 82% 72%, rgba(201, 162, 39, 0.07), transparent 72%);
+}
+.testimonial {
+    border-bottom-color: rgba(201, 162, 39, 0.35);
+}
+.step:hover, .pricing-card:hover {
+    border-color: var(--color-border-lit);
+}
+
+/* --- Structural fixes carried into every route -------------------------- */
+
+/* ONE prose measure. Was six with no rule. */
+.lead-prose,
+.scope-list,
+.not-block,
+.conversation,
+.value-maths,
+.section-intro {
+    /* rem, not em: em resolves against each element's own font-size,
+       which is what left six different widths in the original. */
+    max-width: 46rem;
+}
+
+/* Split the accent's jobs: gold signifies, red acts. */
+.section-label,
+.pricing-card-label,
+.pillar-title,
+.scope-item strong,
+.not-title,
+.compare th:last-child,
+.conversation-speaker {
+    color: var(--color-gold);
+}
+
+/* --- Route C character: the page as an indexed document ------------------ */
+
+/* Number every section. The count itself becomes the rhythm the black lacked. */
+main { counter-reset: brief; }
+
+main section .section-label {
+    counter-increment: brief;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--color-border-lit);
+    padding-bottom: var(--space-2);
+}
+main section .section-label::before {
+    content: counter(brief, decimal-leading-zero);
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Hairline structure: components sit inside ruled frames, like a form */
+.compare,
+.not-block,
+.value-maths,
+.founder-terms {
+    border: 1px solid var(--color-border-lit);
+}
+.compare th,
+.compare td {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+    border-right: 1px solid var(--color-border);
+}
+.compare th:last-child,
+.compare td:last-child { border-right: none; }
+
+/* Scope reads as an index, not a list */
+.scope-item {
+    display: grid;
+    grid-template-columns: minmax(0, 14em) minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+}
+.scope-item strong { margin-bottom: 0; }
+
+@media (max-width: 767px) {
+    .scope-item { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+}
+
+/* Pillars gain a top rule in gold so the payoff triad reads as the spine */
+.pillar { border-top-color: var(--color-gold); }
+
+/* Two reds, by job. The signal red (--color-accent, 4.99:1 on bg) is legible
+   as small text. White on it is only 3.93:1, so filled buttons use a darker
+   action red instead: white on this = 4.75:1. */
+.cta-button,
+.header-cta,
+.beta-badge {
+    background-color: #c9463a;
+    border-color: #c9463a;
+}
+.cta-button:hover,
+.header-cta:hover {
+    background-color: #b83a2c;
+    border-color: #b83a2c;
+}

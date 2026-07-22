@@ -1,0 +1,104 @@
+/* ==========================================================================
+   ROUTE A — "Dossier"
+   An intelligence brief printed on paper. Light, editorial, maximum legibility.
+   Keeps the Growth Intel DNA: Cormorant display, the red signal, the council
+   language. Inverts the ground so the page reads as a document, not a void.
+
+   Override file. index.html never loads this.
+   ========================================================================== */
+
+:root {
+    /* Ground: warm paper, not clinical white */
+    --color-bg:          #f4f1ea;
+    --color-surface:     #ebe6db;
+    --color-raise:       #e6e0d2;
+
+    /* Ink. Measured on --color-bg: text 15.6:1, muted 8.9:1, faint 4.8:1 */
+    --color-text:        #17150f;
+    --color-text-muted:  #4a4438;
+    --color-text-faint:  #6b6454;
+
+    /* Signals. Red is reserved for action and emphasis, gold carries labels. */
+    --color-accent:      #a32828;
+    --color-gold:        #7a5c18;
+
+    --color-border:      #d7d0c1;
+    --color-border-lit:  #b9b09c;
+}
+
+/* --- Patches for values hardcoded against the dark ground ---------------- */
+
+/* Sticky header veil */
+.site-header {
+    background-color: rgba(244, 241, 234, 0.9);
+}
+
+/* The hero glow was a red bloom on black. On paper it becomes a soft wash. */
+.hero::before {
+    background: radial-gradient(55% 50% at 32% 38%, rgba(163, 40, 40, 0.07), transparent 70%);
+}
+.pilot-section::before {
+    background: radial-gradient(50% 70% at 50% 0%, rgba(163, 40, 40, 0.06), transparent 70%);
+}
+.hero {
+    background:
+        radial-gradient(52% 48% at 28% 34%, rgba(163, 40, 40, 0.06), transparent 70%),
+        radial-gradient(44% 44% at 82% 72%, rgba(122, 92, 24, 0.07), transparent 72%);
+}
+
+/* Card hover border */
+.step:hover, .pricing-card:hover {
+    border-color: var(--color-border-lit);
+}
+
+/* Testimonial rule */
+.testimonial {
+    border-bottom-color: rgba(122, 92, 24, 0.35);
+}
+
+/* --- Structural fixes carried into every route -------------------------- */
+
+/* ONE prose measure. Was six (1104/832/760/736/704/650) with no rule.
+   Now two: full width, or this. */
+.lead-prose,
+.scope-list,
+.not-block,
+.conversation,
+.value-maths,
+.section-intro {
+    /* rem, not em: em resolves against each element's own font-size,
+       which is what left six different widths in the original. */
+    max-width: 46rem;
+}
+
+/* Split the accent's jobs: gold labels the page, red is action + emphasis. */
+.section-label,
+.pricing-card-label,
+.pillar-title,
+.scope-item strong,
+.not-title,
+.compare th:last-child {
+    color: var(--color-gold);
+}
+
+/* --- Route A character --------------------------------------------------- */
+
+/* Paper wants a rule under its section labels, like a filed document */
+.section-label {
+    border-bottom: 1px solid var(--color-border-lit);
+    padding-bottom: var(--space-2);
+}
+
+/* Raised sections read as a tipped-in page, with an edge */
+.section--raise {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Panels sit on the paper rather than glowing out of the dark */
+.not-block,
+.value-maths,
+.founder-terms,
+.pricing-card {
+    background-color: var(--color-surface);
+}
