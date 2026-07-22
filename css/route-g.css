@@ -1,0 +1,106 @@
+/* ==========================================================================
+   ROUTE G — "Duotone"
+   Answer to: the page split into a blue half and a cream half.
+
+   Here nothing is ever a half. Two dark jewel tones alternate section by
+   section for the whole page: a cold ink navy and a deep forest green. Both
+   are dark, so the text treatment never changes, but every section is
+   visibly different from the one above it.
+
+   The result is a weave rather than a division. You cannot point at a "top
+   colour" and a "bottom colour", because both run the full length.
+
+   Override file. index.html never loads this.
+   ========================================================================== */
+
+:root {
+    --color-bg:          #0b1220;   /* navy, the odd sections */
+    --color-surface:     #151d2e;
+    --color-raise:       #151d2e;
+
+    --color-text:        #e8ecef;   /* 15.7:1 on either tone */
+    --color-text-muted:  #b4bcc4;   /* 9.8:1 */
+    --color-text-faint:  #99a2ab;   /* 6.9:1 on navy, 5.4:1 on the lifted forest */
+
+    --color-accent:      #e0614a;   /* the single warm signal on both grounds */
+    --color-gold:        #cfae52;
+
+    --color-border:      #1c2536;
+    --color-border-lit:  #38445a;
+}
+
+.site-header { background-color: rgba(11, 18, 32, 0.92); }
+
+/* --- Structural fixes carried into every route -------------------------- */
+
+.lead-prose, .scope-list, .not-block, .conversation,
+.value-maths, .section-intro, .timeline, .timeline-close {
+    max-width: 46rem;
+}
+.section-label, .pillar-title, .scope-item strong,
+.not-title, .compare th:last-child, .timeline-when {
+    color: var(--color-gold);
+}
+
+/* --- The weave -----------------------------------------------------------
+   Navy and forest, alternating. Each carries its own surface so panels sit
+   on their own tone. Neither colour owns a region of the page. */
+
+.hero, #how-it-works, #scope, #evolves, #about {
+    --color-bg:      #0b1220;   /* ink navy */
+    --color-surface: #151d2e;
+    --color-border:      #1c2536;
+    --color-border-lit:  #38445a;
+}
+
+/* The forest tone is deliberately LIGHTER than the navy, not just a different
+   hue. At these depths hue alone is invisible: the first pass measured
+   1.046:1 between the two tones, worse than the flat black this route exists
+   to fix. Lifting the green to #1a2b22 puts the step at 1.27:1, which is the
+   same order as the steps that read correctly in the other routes. */
+#trap, #difference, #pricing, #teams, #signup {
+    --color-bg:      #1a2b22;   /* deep forest, lifted */
+    --color-surface: #24382d;
+    --color-border:      #2a3f34;
+    --color-border-lit:  #45604f;
+}
+
+.hero, #trap, #how-it-works, #difference, #scope,
+#pricing, #evolves, #teams, #about, #signup {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Blooms pick up the tone they sit on */
+.hero::before {
+    background: radial-gradient(55% 50% at 32% 38%, rgba(224, 97, 74, 0.10), transparent 70%);
+}
+.hero {
+    background:
+        radial-gradient(52% 48% at 28% 34%, rgba(224, 97, 74, 0.10), transparent 70%),
+        radial-gradient(50% 50% at 78% 24%, rgba(48, 78, 140, 0.28), transparent 72%);
+}
+.pilot-section::before {
+    background: radial-gradient(50% 70% at 50% 0%, rgba(80, 140, 110, 0.16), transparent 70%);
+}
+.testimonial { border-bottom-color: rgba(207, 174, 82, 0.35); }
+.step:hover, .pricing-card:hover { border-color: var(--color-border-lit); }
+
+/* Panels lift off whichever tone they are on */
+.pricing-card, .not-block, .value-maths, .founder-terms {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-lit);
+}
+
+/* A hairline between two tones muddies the weave; let the colours meet */
+main hr.section-divider { border-color: transparent; }
+
+/* Buttons: one red across both tones, white on it passes at 4.9:1 */
+.cta-button, .header-cta, .beta-badge {
+    background-color: #c74a38;
+    border-color: #c74a38;
+}
+.cta-button:hover, .header-cta:hover {
+    background-color: #b23d2c;
+    border-color: #b23d2c;
+}

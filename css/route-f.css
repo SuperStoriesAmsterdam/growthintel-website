@@ -1,0 +1,120 @@
+/* ==========================================================================
+   ROUTE F — "Daylight"
+   Answer to: the page split into a blue half and a cream half.
+
+   Here the split is removed by making light the base and dark the exception.
+   The page is warm paper nearly all the way down. Dark appears only twice,
+   at the hero and at the closing call, so it reads as bookends rather than
+   as one half of the page.
+
+   Because dark is the minority and always full-bleed, it punctuates instead
+   of dividing. The paper in between never gets interrupted.
+
+   Override file. index.html never loads this.
+   ========================================================================== */
+
+:root {
+    /* Paper is the base for the whole document */
+    --color-bg:          #f4f1ea;
+    --color-surface:     #ebe6db;
+    --color-raise:       #eee9de;
+
+    --color-text:        #17150f;   /* 16.2:1 */
+    --color-text-muted:  #4a4438;   /* 8.6:1 */
+    --color-text-faint:  #6b6454;   /* 5.2:1 */
+
+    --color-accent:      #a32828;   /* 6.4:1, white on it 7.3:1 */
+    --color-gold:        #7a5c18;   /* 5.5:1 */
+
+    --color-border:      #d7d0c1;
+    --color-border-lit:  #b9b09c;
+}
+
+.site-header {
+    background-color: rgba(244, 241, 234, 0.92);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Structural fixes carried into every route -------------------------- */
+
+.lead-prose, .scope-list, .not-block, .conversation,
+.value-maths, .section-intro, .timeline, .timeline-close {
+    max-width: 46rem;
+}
+.section-label, .pillar-title, .scope-item strong,
+.not-title, .compare th:last-child, .timeline-when {
+    color: var(--color-gold);
+}
+
+/* Paper wants ruled labels, like a filed document */
+.section-label {
+    border-bottom: 1px solid var(--color-border-lit);
+    padding-bottom: var(--space-2);
+}
+
+/* Panels sit slightly darker than the sheet */
+.pricing-card, .not-block, .value-maths, .founder-terms {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+}
+.step:hover, .pricing-card:hover { border-color: var(--color-border-lit); }
+.testimonial { border-bottom-color: rgba(122, 92, 24, 0.35); }
+
+/* --- The two dark moments -----------------------------------------------
+   Hero and close. Same ink, so they rhyme across the length of the page and
+   read as a pair holding the document rather than as a half. */
+
+.hero,
+#signup {
+    --color-bg:          #14161c;
+    --color-surface:     #1e212a;
+    --color-raise:       #1e212a;
+    --color-text:        #f1f2f5;
+    --color-text-muted:  #bcc0ca;
+    --color-text-faint:  #8b909d;
+    --color-accent:      #e2594a;   /* lifts on ink, 5.2:1 */
+    --color-gold:        #d0a93a;
+    --color-border:      #262a34;
+    --color-border-lit:  #3b414f;
+
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Ruled labels belong to paper, not to the ink blocks */
+.hero .section-label,
+#signup .section-label {
+    border-bottom-color: var(--color-border-lit);
+}
+
+/* Buttons on ink keep a red that passes with white */
+.hero .cta-button,
+#signup .cta-button {
+    background-color: #c9463a;
+    border-color: #c9463a;
+    color: #ffffff;
+}
+.hero .cta-button:hover,
+#signup .cta-button:hover {
+    background-color: #b83a2c;
+    border-color: #b83a2c;
+}
+
+/* Panels inside the ink blocks */
+#signup .founder-terms,
+#signup .beta-field input,
+#signup .beta-field textarea {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-lit);
+    color: var(--color-text);
+}
+
+.hero::before {
+    background: radial-gradient(55% 50% at 32% 38%, rgba(226, 89, 74, 0.12), transparent 70%);
+}
+.pilot-section::before {
+    background: radial-gradient(50% 70% at 50% 0%, rgba(226, 89, 74, 0.10), transparent 70%);
+}
+
+/* The seam either side of an ink block is a hard edge, not a hairline */
+main hr.section-divider:has(+ #signup) { border-color: transparent; }

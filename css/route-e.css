@@ -1,0 +1,108 @@
+/* ==========================================================================
+   ROUTE E — "Descent"
+   Answer to: the page split into a blue half and a cream half.
+
+   Here there is no split at all. The ground travels continuously across all
+   ten sections, from a cold deep navy at the hero to a warm dark plum at the
+   close. Each step is small enough to feel like one material and the total
+   journey is large enough to feel like movement.
+
+   Everything stays in the dark range on purpose, so the text treatment never
+   has to change and the page reads as one uninterrupted surface. The travel
+   is in HUE (blue to red) as much as in lightness, which is what makes it
+   perceptible without needing a light/dark flip.
+
+   Override file. index.html never loads this.
+   ========================================================================== */
+
+:root {
+    --color-bg:          #0a1124;
+    --color-surface:     #141c33;
+    --color-raise:       #141c33;
+
+    --color-text:        #e9ecf4;   /* 15.9:1 at the darkest step */
+    --color-text-muted:  #b8c0d2;   /* 10.2:1 */
+    --color-text-faint:  #8d96ab;   /* 6.2:1 */
+
+    --color-accent:      #e2594a;
+    --color-gold:        #d0a93a;
+
+    --color-border:      #1e2740;
+    --color-border-lit:  #3a4462;
+}
+
+.site-header { background-color: rgba(10, 17, 36, 0.92); }
+
+/* The bloom follows the ground: cold at the top of the page */
+.hero::before {
+    background: radial-gradient(55% 50% at 32% 38%, rgba(226, 89, 74, 0.10), transparent 70%);
+}
+.hero {
+    background:
+        radial-gradient(52% 48% at 28% 34%, rgba(226, 89, 74, 0.10), transparent 70%),
+        radial-gradient(50% 50% at 78% 24%, rgba(53, 82, 150, 0.30), transparent 72%);
+}
+/* The closing bloom is warm, matching where the descent has arrived */
+.pilot-section::before {
+    background: radial-gradient(50% 70% at 50% 0%, rgba(226, 89, 74, 0.12), transparent 70%);
+}
+.testimonial { border-bottom-color: rgba(208, 169, 58, 0.35); }
+.step:hover, .pricing-card:hover { border-color: var(--color-border-lit); }
+
+/* --- Structural fixes carried into every route -------------------------- */
+
+.lead-prose, .scope-list, .not-block, .conversation,
+.value-maths, .section-intro, .timeline, .timeline-close {
+    max-width: 46rem;
+}
+.section-label, .pricing-card-label, .pillar-title, .scope-item strong,
+.not-title, .compare th:last-child, .timeline-when {
+    color: var(--color-gold);
+}
+.pricing-card-label { color: var(--color-text); }
+
+/* --- The descent --------------------------------------------------------
+   Ten steps. Blue travels to plum, and the ground lifts very slightly so the
+   page feels like it is coming up towards the reader rather than fading out.
+   Each section also sets its own surface, so panels sit correctly on their
+   own step instead of on a single global value. */
+
+.hero            { --color-bg: #0a1124; --color-surface: #141c33; }
+#trap            { --color-bg: #0d1327; --color-surface: #171d36; }
+#how-it-works    { --color-bg: #11142b; --color-surface: #1b1e3a; }
+#difference      { --color-bg: #16152f; --color-surface: #201f3d; }
+#scope           { --color-bg: #1b1632; --color-surface: #262040; }
+#pricing         { --color-bg: #201734; --color-surface: #2c2143; }
+#evolves         { --color-bg: #261836; --color-surface: #322245; }
+#teams           { --color-bg: #2b1934; --color-surface: #382343; }
+#about           { --color-bg: #301a31; --color-surface: #3d2440; }
+#signup          { --color-bg: #351b2d; --color-surface: #42253c; }
+
+/* Every section paints its own step. IDs beat .section--raise, so the
+   alternating raise treatment steps aside for the ladder. */
+.hero, #trap, #how-it-works, #difference, #scope,
+#pricing, #evolves, #teams, #about, #signup {
+    background-color: var(--color-bg);
+}
+
+/* Dividers would draw a hard line between two steps that are meant to read
+   as continuous. Remove them and let the colour change do the work. */
+main hr.section-divider { border-color: transparent; }
+
+/* Panels lift off their own step */
+.pricing-card, .not-block, .value-maths, .founder-terms {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-lit);
+}
+
+/* Two reds by job. The signal red reads well as small text on every step,
+   but white on it is only 3.6:1, so filled buttons take a darker action red
+   where white measures 4.8:1. */
+.cta-button, .header-cta, .beta-badge {
+    background-color: #c9463a;
+    border-color: #c9463a;
+}
+.cta-button:hover, .header-cta:hover {
+    background-color: #b83a2c;
+    border-color: #b83a2c;
+}
