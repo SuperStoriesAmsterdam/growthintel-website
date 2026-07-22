@@ -1,50 +1,56 @@
 /* ==========================================================================
-   ROUTE C — "Brief"
-   Answers the note without abandoning the dark: the black stops feeling empty
-   because the page becomes visibly engineered. A cooler ground, a numbered
-   section system, hairline rules, and gold used systematically for every
-   signifier. Reads as a classified brief rather than a void.
+   ROUTE C — "Brief" (midnight navy)
+   Answers the note without abandoning the dark, twice over. The ground stops
+   being black and becomes a deep navy, so it reads as a chosen colour rather
+   than an absence of one. Then the page becomes visibly engineered: a numbered
+   section system, hairline rules, and gold used for every signifier. Reads as
+   a classified brief rather than a void.
 
    Override file. index.html never loads this.
    ========================================================================== */
 
 :root {
-    /* Cooler ground. The warm red then reads as the only heat on the page. */
-    --color-bg:          #0b0c0e;
-    --color-surface:     #151821;
-    --color-raise:       #212630;   /* visible step: 1.31:1 against bg */
+    /* Midnight navy, not black. Deep enough to keep the drama, blue enough
+       to read as a chosen colour rather than an absence of one. The warm red
+       and the gold then become the only heat on a cool ground, which is where
+       both of them look most expensive. */
+    --color-bg:          #0a1124;
+    --color-surface:     #131c35;
+    --color-raise:       #1c2949;   /* visible step: ~1.31:1 against bg */
 
-    /* Ink. On bg: text 15.2:1, muted 9.5:1, faint 6.1:1 (was 2.76:1, failed) */
-    --color-text:        #e8eaed;
-    --color-text-muted:  #b4b9c2;
-    --color-text-faint:  #8a909b;
+    /* Ink, cooled to match the ground. All clear AA. */
+    --color-text:        #e9ecf4;
+    --color-text-muted:  #b6bfd4;
+    --color-text-faint:  #8b95ae;
 
-    --color-accent:      #d8564a;   /* action + large emphasis only */
-    --color-gold:        #c9a227;   /* every signifier, 8.1:1 on bg */
+    --color-accent:      #e2594a;   /* action + emphasis, the only warm signal */
+    --color-gold:        #d0a93a;   /* every signifier. Gold on navy. */
 
-    --color-border:      #23272f;
-    --color-border-lit:  #3a404b;
+    --color-border:      #1e2740;
+    --color-border-lit:  #35415f;
 }
 
 .site-header {
-    background-color: rgba(11, 12, 14, 0.9);
+    background-color: rgba(10, 17, 36, 0.9);
     border-bottom: 1px solid var(--color-border-lit);
 }
 
-/* The bloom goes cooler and quieter; heat is reserved for signals */
+/* The bloom becomes a blue depth with a single warm core, so the hero has
+   atmosphere without going back to a flat field */
 .hero::before {
-    background: radial-gradient(55% 50% at 32% 38%, rgba(216, 86, 74, 0.10), transparent 70%);
+    background: radial-gradient(55% 50% at 32% 38%, rgba(226, 89, 74, 0.10), transparent 70%);
 }
 .pilot-section::before {
-    background: radial-gradient(50% 70% at 50% 0%, rgba(216, 86, 74, 0.08), transparent 70%);
+    background: radial-gradient(50% 70% at 50% 0%, rgba(226, 89, 74, 0.08), transparent 70%);
 }
 .hero {
     background:
-        radial-gradient(52% 48% at 28% 34%, rgba(216, 86, 74, 0.12), transparent 70%),
-        radial-gradient(44% 44% at 82% 72%, rgba(201, 162, 39, 0.07), transparent 72%);
+        radial-gradient(52% 48% at 28% 34%, rgba(226, 89, 74, 0.10), transparent 70%),
+        radial-gradient(50% 50% at 78% 24%, rgba(53, 82, 150, 0.28), transparent 72%),
+        radial-gradient(44% 44% at 82% 76%, rgba(208, 169, 58, 0.07), transparent 72%);
 }
 .testimonial {
-    border-bottom-color: rgba(201, 162, 39, 0.35);
+    border-bottom-color: rgba(208, 169, 58, 0.35);
 }
 .step:hover, .pricing-card:hover {
     border-color: var(--color-border-lit);
@@ -126,9 +132,9 @@ main section .section-label::before {
 /* Pillars gain a top rule in gold so the payoff triad reads as the spine */
 .pillar { border-top-color: var(--color-gold); }
 
-/* Two reds, by job. The signal red (--color-accent, 4.99:1 on bg) is legible
-   as small text. White on it is only 3.93:1, so filled buttons use a darker
-   action red instead: white on this = 4.75:1. */
+/* Two reds, by job. The signal red (--color-accent) is legible as small text
+   on the navy ground. White on it is under 4.5:1, so filled buttons use a
+   darker action red instead. */
 .cta-button,
 .header-cta,
 .beta-badge {
@@ -140,3 +146,5 @@ main section .section-label::before {
     background-color: #b83a2c;
     border-color: #b83a2c;
 }
+
+
