@@ -42,8 +42,12 @@
     --color-on-btn:      #ffffff;
 }
 
-/* DAY — warm paper */
-:root[data-theme="day"] {
+/* DAY — warm paper.
+   .palette-day lets a single block opt into this palette regardless of the
+   mode the page is in, so a paper section inside night reuses these exact
+   values instead of a second copy that would drift. */
+:root[data-theme="day"],
+.palette-day {
     --color-bg:         #f4f1ea;  /* warm paper, not clinical white */
     --color-surface:    #ebe6db;
     --color-raise:      #e6e0d2;
@@ -87,7 +91,11 @@
     --text-2xl:  1.875rem;
     --text-3xl:  2.5rem;
     --text-4xl:  clamp(2.75rem, 5.5vw, 4rem);
-    --text-hero: clamp(3rem, 7vw, 5.75rem);
+    /* Sized so the whole hero clears the fold at 1440x900. The intro is seven
+       beats plus a payoff, and at 92px the headline alone took four lines and
+       47% of the fold, pushing the CTA 144px under. Only this one element was
+       resized; nothing else in the hero changed. */
+    --text-hero: clamp(2.5rem, 5.2vw, 4.5rem);
 
     /* Typography — Weights */
     --weight-regular: 400;
