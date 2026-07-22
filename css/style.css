@@ -351,6 +351,46 @@ section {
     margin: 0;
 }
 
+/* ==========================================================================
+   THE BRIDGE
+   Paper and night blue were running in parallel: paper always carried ink,
+   blue always carried light text, and nothing crossed. These rules make each
+   ground borrow from the other so they read as one system.
+
+   Direction 1 — paper into the night.
+   Every display heading is set in --color-display, which is the paper colour
+   on a dark ground and the ink colour on a light one. A headline on night
+   blue is therefore made of exactly the paper used two sections below, and it
+   runs warm against the cool ground and the cool body copy.
+   ========================================================================== */
+.hero-title,
+.section-title,
+.hero-line--lead,
+.hero-line--close,
+.pull-quote,
+.council-goal,
+.timeline-title,
+.step-title,
+.board-item-title,
+.pricing-card-label,
+.testimonial-quote {
+    color: var(--color-display);
+}
+
+/* Direction 2 — night into the paper.
+   Inside a paper section the cards invert to the night ground with paper
+   type, so the dark material reappears as an object on the light sheet. The
+   values come from the night palette by name, not by copy. */
+.palette-day .step {
+    background-color: var(--night-bg);
+    border-color: var(--night-border-lit);
+}
+.palette-day .step .step-title       { color: var(--color-paper); }
+.palette-day .step .step-description { color: var(--night-muted); }
+.palette-day .step .step-number      { color: var(--night-gold); }
+.palette-day .step .key              { color: var(--night-accent); }
+.palette-day .step:hover             { border-color: var(--night-muted); }
+
 /* A block that carries the day palette wherever it sits. Used on "how it
    works", which is a paper sheet even in night mode: the three steps are the
    explanatory part of the page, and they read better as a document than as

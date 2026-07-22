@@ -15,19 +15,48 @@
    Every text value clears WCAG AA against its own ground in both modes.
    ========================================================================== */
 
+/* THE BRIDGE PAIR
+   Paper and ink are absolute: the same two colours in both modes, never
+   recalculated. They are what ties the two grounds together, because each one
+   keeps appearing on the other's ground instead of the two systems running in
+   parallel and never touching.
+
+   --color-display is the one that does the work. Display type is made of
+   paper on a dark ground and of ink on a light one, so a headline on night
+   blue is literally the colour of the paper sections. */
+:root {
+    /* Absolutes. Declared once, never recalculated per mode, so a rule that
+       needs "the other ground" can name it instead of copying its hex. That
+       copying is what let the old route files drift out of the system. */
+    --color-paper:        #f4f1ea;
+    --color-ink:          #17150f;
+
+    --night-bg:           #0a1124;
+    --night-surface:      #131c35;
+    --night-raise:        #1c2949;
+    --night-text:         #e9ecf4;
+    --night-muted:        #b6bfd4;
+    --night-faint:        #8b95ae;
+    --night-accent:       #e2594a;
+    --night-gold:         #d0a93a;
+    --night-border:       #1e2740;
+    --night-border-lit:   #35415f;
+}
+
 /* NIGHT — the default, and the brand's home key */
 :root,
 :root[data-theme="night"] {
-    --color-bg:         #0a1124;  /* night blue */
-    --color-surface:    #131c35;
-    --color-raise:      #1c2949;  /* 1.31:1 against bg — a step you can see */
-    --color-text:       #e9ecf4;  /* 15.9:1 */
-    --color-text-muted: #b6bfd4;  /* 10.2:1 */
-    --color-text-faint: #8b95ae;  /*  6.3:1 */
-    --color-accent:     #e2594a;  /*  5.2:1 — safe as small text */
-    --color-gold:       #d0a93a;  /*  8.4:1 — carries every label */
-    --color-border:     #1e2740;
-    --color-border-lit: #35415f;
+    --color-display: var(--color-paper);
+    --color-bg:         var(--night-bg);
+    --color-surface:    var(--night-surface);
+    --color-raise:      var(--night-raise);   /* 1.31:1 against bg */
+    --color-text:       var(--night-text);    /* 15.9:1 */
+    --color-text-muted: var(--night-muted);   /* 10.2:1 */
+    --color-text-faint: var(--night-faint);   /*  6.3:1 */
+    --color-accent:     var(--night-accent);  /*  5.2:1 — safe as small text */
+    --color-gold:       var(--night-gold);    /*  8.4:1 — carries every label */
+    --color-border:     var(--night-border);
+    --color-border-lit: var(--night-border-lit);
 
     /* Values that used to be hardcoded */
     --color-header-veil: rgba(10, 17, 36, 0.92);
@@ -48,6 +77,7 @@
    values instead of a second copy that would drift. */
 :root[data-theme="day"],
 .palette-day {
+    --color-display: var(--color-ink);
     --color-bg:         #f4f1ea;  /* warm paper, not clinical white */
     --color-surface:    #ebe6db;
     --color-raise:      #e6e0d2;
