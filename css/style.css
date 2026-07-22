@@ -475,7 +475,19 @@ section {
 @media (min-width: 768px) {
     .pricing-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--space-3);
+        gap: var(--space-4);
+    }
+}
+
+/* The three options should read as three at a glance, so on wide screens the
+   grid breaks out of the text container and uses the page width. */
+@media (min-width: 1200px) {
+    .pricing-grid {
+        width: calc(100vw - (var(--content-padding) * 4));
+        max-width: 1520px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        gap: var(--space-6);
     }
 }
 
@@ -950,6 +962,134 @@ a:focus-visible,
     color: var(--color-text);
 }
 
+/* Pricing card, reworked. The tier name now carries the weight and the
+   description became a full sentence, so it drops to supporting size. The
+   price gets a band of its own so the three options compare at a glance. */
+.pricing-card {
+    padding: var(--space-8) var(--space-6);
+}
+/* Tier name is the headline of the card */
+.pricing-card-label {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+/* The positioning sentence sits under it, quiet */
+.pricing-card-title {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    line-height: 1.55;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    min-height: 4.6em;   /* keeps the three price bands on one line */
+}
+/* Price band */
+.pricing-setup-fee {
+    order: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: var(--space-1);
+    font-size: var(--text-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+}
+.pricing-amount {
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border-lit);
+}
+.pricing-features li {
+    padding-left: var(--space-4);
+    position: relative;
+}
+.pricing-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-gold);
+}
+
+@media (max-width: 767px) {
+    /* Equal-height trick is pointless once the cards stack */
+    .pricing-card-title { min-height: 0; }
+}
+
+/* Timeline — what happens month by month. Replaces the value-arithmetic box,
+   which explained our cost model instead of the customer's experience.
+   A ruled vertical spine with a marker per step, so the growth is visible
+   as a sequence rather than described in a paragraph. */
+.timeline {
+    list-style: none;
+    margin-top: var(--space-12);
+    max-width: 46rem;
+    border-left: 1px solid var(--color-border-lit);
+}
+.timeline-step {
+    position: relative;
+    padding-left: var(--space-6);
+    padding-bottom: var(--space-8);
+}
+.timeline-step:last-child { padding-bottom: 0; }
+
+/* The marker sits on the spine */
+.timeline-step::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 9px;
+    height: 9px;
+    margin-left: -5px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+.timeline-when {
+    font-family: var(--font-brand);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-2);
+}
+.timeline-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-medium);
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+.timeline-step p:last-child {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+.timeline-close {
+    max-width: 46rem;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border-lit);
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    line-height: 1.35;
+    color: var(--color-text-muted);
+}
+.timeline-close strong {
+    color: var(--color-text);
+    font-weight: var(--weight-medium);
+}
+
 /* Value arithmetic — the subscription maths, stated as two plain lines */
 .value-maths {
     max-width: 44em;
@@ -1065,6 +1205,24 @@ a:focus-visible,
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-accent);
+}
+
+/* Wide screens: the topic and its explanation sit side by side, so the five
+   areas scan as a list of subjects instead of reading as a paragraph stack. */
+@media (min-width: 900px) {
+    .scope-list { max-width: none; }
+    .scope-item {
+        display: grid;
+        grid-template-columns: minmax(0, 18em) minmax(0, 1fr);
+        gap: var(--space-6);
+        align-items: baseline;
+        padding: var(--space-4) 0;
+    }
+    .scope-item strong {
+        margin-bottom: 0;
+        font-size: var(--text-sm);
+        letter-spacing: 0.14em;
+    }
 }
 
 /* Boundaries — what Growth Intel deliberately is not */
