@@ -4,9 +4,9 @@
 
     /* ---- Scroll reveal ---- */
     if ('IntersectionObserver' in window && !reduce) {
-        var sel = '.section-label, .section-title, .section-intro, .step, .board-item, .board-value, .conversation-exchange, .testimonial, .pricing-card, .pilot-description, .about-block, .lead-prose, .compare, .pull-quote, .scope-item, .not-block, .value-maths, .pillar, .trap-list, .trap-close, .timeline-step, .timeline-close, .hero-content > *, .hero-line';
+        var sel = '.section-label, .section-title, .section-intro, .step, .board-item, .board-value, .conversation-exchange, .testimonial, .pricing-card, .pilot-description, .about-block, .lead-prose, .compare, .pull-quote, .scope-item, .not-block, .value-maths, .pillar, .trap-list, .trap-close, .timeline-step, .timeline-close, .hero-content > *, .council-panel';
         var els = Array.prototype.slice.call(document.querySelectorAll(sel));
-        ['.step', '.board-item', '.testimonial', '.pricing-card', '.scope-item', '.pillar', '.timeline-step', '.hero-tail .hero-line'].forEach(function (s) {
+        ['.step', '.board-item', '.testimonial', '.pricing-card', '.scope-item', '.pillar', '.timeline-step', '.seat'].forEach(function (s) {
             Array.prototype.forEach.call(document.querySelectorAll(s), function (el, i) {
                 el.style.transitionDelay = (i * 0.08) + 's';
             });
