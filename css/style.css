@@ -1024,15 +1024,51 @@ a:focus-visible,
     color: var(--color-accent);
 }
 
-/* The rest of the intro, sitting just under the fold. No section padding at
-   the top: it should read as the hero continuing after the break, not as a
-   new section starting. */
+/* The rest of the intro, sitting just under the fold.
+   It carried the hero's compact sizing when it lived up there, which made it
+   look like leftovers. On its own it gets a screen of its own: display type,
+   a lot of air between the beats, and a shape (three statements, a turn, a
+   punch) instead of five equal lines. */
 .hero-tail {
     padding-top: 0;
-    padding-bottom: var(--space-12);
+    padding-bottom: var(--space-16);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
 }
 .hero-tail .hero-lines {
+    /* rem, not em: an em measure scales with the type, so enlarging the beats
+       kept the column proportionally narrow and they stayed three lines deep.
+       This is sized so each beat lands on one line at 1440. */
+    max-width: 62rem;
     margin-bottom: 0;
+}
+.hero-tail .hero-line {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2vw, 1.75rem);
+    line-height: 1.35;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+}
+.hero-tail .hero-line:last-child { margin-bottom: 0; }
+
+/* The turn: the point where description becomes intent */
+.hero-tail .hero-line--turn {
+    color: var(--color-text);
+}
+
+/* The punch. Sits apart, so the break before it does the work. */
+.hero-tail .hero-line--punch {
+    margin-top: var(--space-4);
+    color: var(--color-accent);
+}
+
+@media (max-width: 767px) {
+    .hero-tail {
+        min-height: 0;
+        padding-top: var(--space-12);
+    }
+    .hero-tail .hero-line { margin-bottom: var(--space-6); }
 }
 
 /* Hero lines — the intro is written as separate beats, so it is set as a
