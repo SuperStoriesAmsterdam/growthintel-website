@@ -1384,40 +1384,6 @@ a:focus-visible,
 }
 
 /* Boundaries — what Growth Intel deliberately is not */
-.not-block {
-    margin-top: var(--space-12);
-    padding: var(--space-6);
-    border: 1px solid var(--color-border);
-    max-width: 52em;
-}
-.not-title {
-    font-family: var(--font-brand);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-text-faint);
-    margin-bottom: var(--space-4);
-}
-.not-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-.not-list li {
-    font-size: var(--text-base);
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    padding-left: var(--space-4);
-    position: relative;
-}
-.not-list li::before {
-    content: "\2014";
-    position: absolute;
-    left: 0;
-    color: var(--color-text-faint);
-}
 
 /* Scroll-reveal motion */
 .reveal {
