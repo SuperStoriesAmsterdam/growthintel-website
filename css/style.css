@@ -368,7 +368,6 @@ section {
 .hero-line--lead,
 .hero-line--close,
 .pull-quote,
-.council-goal,
 .timeline-title,
 .step-title,
 .board-item-title,
@@ -1062,103 +1061,6 @@ a:focus-visible,
     font-style: italic;
     line-height: 1.1;
     color: var(--color-accent);
-}
-
-/* The rest of the intro, sitting just under the fold.
-   It carried the hero's compact sizing when it lived up there, which made it
-   look like leftovers. On its own it gets a screen of its own: display type,
-   a lot of air between the beats, and a shape (three statements, a turn, a
-   punch) instead of five equal lines. */
-.hero-tail {
-    padding-top: 0;
-    padding-bottom: var(--space-16);
-    min-height: 88vh;
-    display: flex;
-    align-items: center;
-}
-/* The container is a flex item here, so without this it shrinks to its
-   content and the panel never reaches its intended width. */
-.hero-tail > .container {
-    width: 100%;
-}
-/* --- The council panel --------------------------------------------------
-   Second attempt. The first was a spec table with invented seat roles, which
-   buried a short, hard piece of copy in filler and said less than the plain
-   text it replaced. The copy leads again; the frame and the five markers are
-   there to hold it, not to compete with it.
-
-   The five dots are the only graphic, and they carry meaning: five seats.
-   ------------------------------------------------------------------------ */
-.council-panel {
-    border: 1px solid var(--color-border-lit);
-    background-color: var(--color-surface);
-    max-width: 54rem;
-    padding: var(--space-8) var(--space-8) var(--space-6);
-}
-
-/* Five seats, stated as marks rather than a table of made-up job titles */
-.seat-row {
-    display: flex;
-    gap: var(--space-2);
-    margin-bottom: var(--space-6);
-}
-.seat-dot {
-    width: 10px;
-    height: 10px;
-    border: 1px solid var(--color-gold);
-    border-radius: 50%;
-}
-
-/* The declaration is the point of the block, so it is the biggest thing in it */
-.council-goal {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-    line-height: 1.15;
-    color: var(--color-display);
-    margin-bottom: var(--space-6);
-}
-
-/* Supporting lines, deliberately quiet and tight */
-.council-facts {
-    list-style: none;
-    display: grid;
-    gap: var(--space-2);
-    padding-bottom: var(--space-6);
-    margin-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-}
-.council-facts li {
-    font-size: var(--text-base);
-    line-height: 1.55;
-    color: var(--color-text-muted);
-    padding-left: var(--space-4);
-    position: relative;
-}
-.council-facts li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.75em;
-    width: 8px;
-    height: 1px;
-    background-color: var(--color-accent);
-}
-
-/* The punch closes the block */
-.council-punch {
-    font-family: var(--font-brand);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-}
-
-@media (max-width: 767px) {
-    .hero-tail { min-height: 0; padding-top: var(--space-12); }
-    .council-panel { padding: var(--space-6) var(--space-4); }
-}
-    .council-fact::before { display: none; }
 }
 
 /* Hero lines — the intro is written as separate beats, so it is set as a
