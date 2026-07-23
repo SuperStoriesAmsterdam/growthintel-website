@@ -984,6 +984,9 @@ a:focus-visible,
     line-height: 1.35;
     flex-grow: 0;
     margin-bottom: var(--space-4);
+    /* Bridge: the quote is display type, so it takes the paper colour on the
+       night ground and the ink colour on paper. */
+    color: var(--color-display);
 }
 .testimonial--featured .testimonial-attr {
     font-size: var(--text-sm);
