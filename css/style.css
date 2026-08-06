@@ -588,6 +588,34 @@ section {
     flex-direction: column;
 }
 
+/* Description-led cards: a name, an optional tag, the copy, then price and CTA
+   pinned to the bottom so they align across cards of unequal text length. */
+.pricing-card-tag {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-medium);
+    line-height: 1.1;
+    color: var(--color-display);
+    margin-bottom: var(--space-3);
+}
+.pricing-card-desc {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+}
+.pricing-price {
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-brand);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.06em;
+    color: var(--color-text-faint);
+}
+
 .pricing-card-label {
     font-family: var(--font-body);
     font-size: var(--text-xs);
