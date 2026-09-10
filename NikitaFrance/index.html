@@ -126,6 +126,8 @@
             margin-top: var(--space-3);
         }
         .np-tech p { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.65; color: var(--color-text); max-width: none; }
+        .np-tech ul { margin: var(--space-2) 0; padding-left: 1.25rem; }
+        .np-tech li { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-text); margin-bottom: 0.4rem; }
         .np-tech code { font-family: 'DM Sans', var(--font-body); color: var(--color-gold); }
         .np-tech .np-lastline { color: var(--color-text); font-weight: var(--weight-medium); }
 
@@ -298,9 +300,15 @@
             <div class="container">
                 <p class="np-label">A note on what is computed, and what is not yet</p>
                 <div class="np-tech">
-                    <p>The numbers are not produced by the language model. They come from a separate deterministic engine: pure Python, money held in <code>Decimal</code> so there is no floating-point drift, no randomness, the same inputs returning the same output every time. <strong>213 tests</strong> cover it. Every figure carries the method and the inputs that produced it, so any number here can be traced back to how it was computed. The board is forbidden from computing, rounding, or inventing a figure; where it needs one, it asks the engine.</p>
-                    <p>Today the engine computes, deterministically: your <strong>valuation range</strong>, <strong>ownership and dilution at each ask</strong>, <strong>runway</strong>, and the <strong>24-month projection</strong>. Three things it does not compute yet, and we will not pretend otherwise: net revenue retention enters as a figure you supply; CAC and LTV are not in the engine today; MRR appears in the projection as ARR over twelve, with a retention-driven build still to come.</p>
-                    <p>As the underlying data comes in, each of those becomes a computed, reproducible output, built the same deterministic way, and this is where we would work with you and your CTO to get the inputs clean and wire the calculations in. <span class="np-lastline">We would rather name the line exactly than show a number we cannot stand behind.</span></p>
+                    <p>The numbers are not produced by the language model. They come from a separate deterministic engine: pure Python, money held in <code>Decimal</code> so there is no floating-point drift, no randomness, the same inputs returning the same output every time.</p>
+                    <p>Every number here can be traced back to how it was computed. The board is forbidden from computing, rounding, or inventing a figure; where it needs one, it asks the engine.</p>
+                    <p>The engine computes, deterministically: your <strong>valuation range</strong>, <strong>ownership and dilution at each ask</strong>, <strong>runway</strong>, and the <strong>24-month projection</strong>. Three things it does not compute yet:</p>
+                    <ul>
+                        <li>Net revenue retention (enters as a figure you supply).</li>
+                        <li>CAC and LTV (not in the engine).</li>
+                        <li>MRR appears in the projection as ARR over twelve, with a retention-driven build still to come.</li>
+                    </ul>
+                    <p>As the underlying data comes in, each of those becomes a computed, reproducible output, built the same deterministic way, and this is where we would work with you and your CTO to get the inputs clean and wire the calculations in. <span class="np-lastline">The fixed fee quote as shared here is based on a "fair and reasonable principle", based on the above.</span></p>
                 </div>
             </div>
         </section>
