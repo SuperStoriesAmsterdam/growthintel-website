@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Growth Intel × Best Match · Founder Board for Nikita France</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap">
+
+    <script src="../js/theme.js?v=1786707921"></script>
+    <link rel="stylesheet" href="../css/tokens.css?v=1786707921">
+    <link rel="stylesheet" href="../css/style.css?v=1786707921">
+
+    <style>
+        /* Nikita proposal — page-specific layout, built on tokens.css. */
+
+        /* Day mode on THIS page only: white and grey instead of the site's warm
+           cream. Text/ink/accent tokens are left as they are; they clear contrast
+           on white as well as they did on paper. Night mode is untouched. */
+        :root[data-theme="day"] {
+            --color-bg:          #ffffff;
+            --color-surface:     #f5f6f8;
+            --color-raise:       #eceef2;
+            --color-border:      #e3e6ea;
+            --color-border-lit:  #cbd0d8;
+            --color-header-veil: rgba(255, 255, 255, 0.92);
+        }
+
+        .np-main { padding-top: var(--space-8); }
+
+        .np-eyebrow {
+            font-family: var(--font-brand);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-semibold);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin: 0 0 var(--space-3);
+        }
+
+        .np-hero { padding: var(--space-8) 0 var(--space-6); }
+        .np-hero h1 {
+            font-family: var(--font-display);
+            font-weight: var(--weight-semibold);
+            font-size: var(--text-hero);
+            line-height: 1.04;
+            letter-spacing: -0.01em;
+            color: var(--color-display);
+            margin: 0 0 var(--space-4);
+            max-width: 16ch;
+        }
+        .np-hero .np-lede {
+            font-family: var(--font-body);
+            font-size: var(--text-xl);
+            line-height: 1.5;
+            color: var(--color-text-muted);
+            max-width: 60ch;
+            margin: 0 0 var(--space-3);
+        }
+        .np-hero .np-standing {
+            font-size: var(--text-base);
+            color: var(--color-text-faint);
+            max-width: 60ch;
+            margin: var(--space-4) 0 0;
+        }
+
+        .np-section { padding: var(--space-6) 0; border-top: 1px solid var(--color-border); }
+        .np-section:first-of-type { border-top: none; }
+        .np-section > .container { max-width: 900px; }
+
+        .np-h2 {
+            font-family: var(--font-display);
+            font-weight: var(--weight-semibold);
+            font-size: var(--text-3xl);
+            line-height: 1.1;
+            color: var(--color-display);
+            margin: 0 0 var(--space-4);
+        }
+        .np-label {
+            font-family: var(--font-brand);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-semibold);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin: 0 0 var(--space-2);
+        }
+        .np-p {
+            font-size: var(--text-lg);
+            line-height: 1.6;
+            color: var(--color-text);
+            max-width: 66ch;
+            margin: 0 0 var(--space-3);
+        }
+        .np-p--muted { color: var(--color-text-muted); }
+
+        /* Seats */
+        .np-seats { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2); margin-top: var(--space-4); }
+        @media (min-width: 720px) { .np-seats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); } }
+        .np-seat {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: var(--space-4);
+        }
+        .np-seat h3 {
+            font-family: var(--font-display);
+            font-weight: var(--weight-semibold);
+            font-size: var(--text-2xl);
+            line-height: 1.12;
+            color: var(--color-display);
+            margin: 0 0 var(--space-2);
+        }
+        .np-seat p { font-size: var(--text-base); line-height: 1.6; color: var(--color-text-muted); margin: 0; }
+        .np-seat .np-kicker { display:block; font-family: var(--font-brand); font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); margin-bottom: var(--space-1); }
+
+        /* Technical box for the CTO */
+        .np-tech {
+            background: var(--color-raise);
+            border: 1px solid var(--color-border-lit);
+            border-radius: 14px;
+            padding: var(--space-4);
+            margin-top: var(--space-3);
+        }
+        .np-tech p { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.65; color: var(--color-text); max-width: none; }
+        .np-tech code { font-family: 'DM Sans', var(--font-body); color: var(--color-gold); }
+        .np-tech .np-lastline { color: var(--color-text); font-weight: var(--weight-medium); }
+
+        /* Replaces + offer lists */
+        .np-list { list-style: none; padding: 0; margin: var(--space-3) 0 0; }
+        .np-list li {
+            font-size: var(--text-lg);
+            line-height: 1.55;
+            color: var(--color-text);
+            padding: var(--space-2) 0 var(--space-2) var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+        }
+        .np-list li:before { content: ""; position: absolute; left: 0; top: 1.5rem; width: 10px; height: 1px; background: var(--color-gold); }
+        .np-list li strong { color: var(--color-display); font-weight: var(--weight-semibold); }
+
+        .np-offer { margin-top: var(--space-4); }
+        .np-offer .np-list li { font-size: var(--text-lg); }
+        .np-note { font-size: var(--text-sm); color: var(--color-text-faint); margin-top: var(--space-3); }
+
+        /* Sign + questions */
+        .np-act { padding: var(--space-8) 0 var(--space-12); border-top: 1px solid var(--color-border); }
+        .np-act > .container { max-width: 720px; }
+        .np-walkout { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-2xl); line-height: 1.3; color: var(--color-display); margin: 0 0 var(--space-6); }
+
+        .np-panel {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border-lit);
+            border-radius: 16px;
+            padding: var(--space-5, 2.5rem) var(--space-4);
+        }
+        .np-field { margin-bottom: var(--space-3); }
+        .np-field label { display:block; font-family: var(--font-brand); font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-1); }
+        .np-field input[type="text"] {
+            width: 100%; box-sizing: border-box;
+            background: var(--color-bg); color: var(--color-text);
+            border: 1px solid var(--color-border-lit); border-radius: 10px;
+            padding: 0.85rem 1rem; font-family: var(--font-body); font-size: var(--text-base);
+        }
+        .np-field input:focus { outline: 2px solid var(--color-gold); outline-offset: 1px; }
+
+        .np-sigwrap { position: relative; }
+        .np-sigpad {
+            width: 100%; height: 150px; display: block;
+            background: var(--color-bg);
+            border: 1px dashed var(--color-border-lit); border-radius: 10px;
+            touch-action: none; cursor: crosshair;
+        }
+        .np-sighint { position: absolute; left: 1rem; bottom: 0.6rem; font-size: var(--text-xs); color: var(--color-text-faint); pointer-events: none; }
+        .np-sigclear { background: none; border: none; color: var(--color-text-faint); font-family: var(--font-brand); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; padding: var(--space-1) 0; }
+        .np-sigclear:hover { color: var(--color-accent); }
+
+        .np-check { display: flex; gap: 0.6rem; align-items: flex-start; margin: var(--space-3) 0; }
+        .np-check input { margin-top: 0.25rem; width: 18px; height: 18px; accent-color: var(--color-gold); }
+        .np-check label { font-size: var(--text-sm); line-height: 1.5; color: var(--color-text-muted); }
+
+        .np-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--color-btn); color: var(--color-on-btn);
+            border: none; border-radius: 999px;
+            font-family: var(--font-brand); font-weight: var(--weight-semibold); font-size: var(--text-sm); letter-spacing: 0.04em;
+            padding: 0.9rem 1.6rem; cursor: pointer; transition: background var(--transition-base);
+        }
+        .np-btn:hover { background: var(--color-btn-hover); }
+        .np-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+        .np-btn--ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border-lit); }
+        .np-btn--ghost:hover { background: var(--color-raise); border-color: var(--color-gold); }
+
+        .np-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin-top: var(--space-3); }
+
+        .np-confirm {
+            margin-top: var(--space-4); padding: var(--space-3);
+            border: 1px solid var(--color-gold); border-radius: 12px;
+            background: var(--color-bloom-gold);
+            font-size: var(--text-base); line-height: 1.6; color: var(--color-text);
+        }
+        .np-confirm strong { color: var(--color-display); }
+
+        .np-ask { margin-top: var(--space-6); text-align: left; }
+        .np-ask p { font-size: var(--text-base); color: var(--color-text-muted); margin: 0 0 var(--space-2); max-width: 60ch; }
+
+        .np-conf { font-size: var(--text-xs); font-family: var(--font-brand); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-faint); }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="site-logo">
+                <span class="site-logo-name">Growth Intel</span>
+                <span class="site-logo-sub">× The Best Match</span>
+            </a>
+            <nav class="nav-right">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch colour mode">
+                    <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line>
+                    </svg>
+                    <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+                    </svg>
+                    <span class="theme-label">Night</span>
+                </button>
+                <a href="#akkoord" class="header-cta">Sign off</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="np-main">
+
+        <!-- Hero -->
+        <section class="np-hero">
+            <div class="container">
+                <p class="np-eyebrow">Founding-client proposal · confidential · for Nikita France</p>
+                <h1>The board that tests you before the investors do.</h1>
+                <p class="np-lede">Calibrated to SocialJet, always on, with your latest numbers at hand. It rehearses the questions that decide the round, so the investor meeting is not the first time you meet them.</p>
+                <p class="np-standing">Three things, always on: a standing board for the raise, a CFO seat built on your numbers, and a seat that reads how you show up.</p>
+            </div>
+        </section>
+
+        <!-- What it is -->
+        <section class="np-section">
+            <div class="container">
+                <p class="np-label">What this is</p>
+                <p class="np-p">Few founders have the board they actually need. The people who would really test you are the investors you still have to win. This one is the informed sparring partner: always on, calibrated to SocialJet, with your latest numbers at hand.</p>
+                <p class="np-p">It is calibrated to SocialJet in a two-hour intake before it answers anything. From there it carries your context and sharpens every day you use it. That makes it a tool and a practice at once.</p>
+                <p class="np-p np-p--muted">It sits under the work Kristina and The Best Match already do with you: the coaching, the funder finder, the matchmaking, the raise itself. Kristina runs the raise. The board is the always-on layer between those sessions, holding your numbers and your context so you walk into each one further along. You would be the first founder on this board with a CFO seat built on your own numbers, and that is why the terms below are founding-client terms.</p>
+            </div>
+        </section>
+
+        <!-- The seats -->
+        <section class="np-section">
+            <div class="container">
+                <h2 class="np-h2">What sits in the board</h2>
+                <div class="np-seats">
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">CFO</span>Built to grow with you to 2–3M ARR</h3>
+                        <p>You run one revenue engine: subscriptions booked through the site, with the attribution to see where each customer came from. That single clean stream is what keeps the build feasible within the quoted budget. The seat shows you your valuation range, what each ask costs you in ownership and dilution, your runway, and the 24-month projection behind your ask. Every one of those figures is computed by a deterministic engine, never by a language model. As you bring the numbers behind retention and acquisition, they feed the same engine. The clean single stream that keeps it simple is the first thing a VC probes, so the seat flags it and helps you answer it before they ask.</p>
+                    </article>
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">Valuation</span>A range you can hold</h3>
+                        <p>Where companies at your ARR and growth actually price, what asking 2.5M for 10% implies about your post-money, and why a number stays standing when someone pushes on it. The seat opens with the question a sharp investor opens with: what is your evidence for the number you are pricing on. It gives you a conversation you can defend under questioning, with the figures coming from the engine.</p>
+                    </article>
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">Positioning</span>The story that moves the number</h3>
+                        <p>It keeps you in the framing that carries a premium: the first-party demand and attribution layer for independent travel. It keeps you out of the crowded marketing-tool category, where you would be judged on features. The seat sharpens the line until it holds under an investor's weight.</p>
+                    </article>
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">Investors across the table</span>Rehearsed before it costs you</h3>
+                        <p>The objection a VC raises, and the different one an angel or family office raises, surfaced before the meeting where either costs you money. This is where you rehearse the pitch until the questions that decide the round are ones you have already answered out loud.</p>
+                    </article>
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">The seat that reads you</span>The person under the pitch</h3>
+                        <p>It reads what is visible in how you talk about the company. It catches the moment you pre-discount your own number, or reach for "we got lucky," and reflects back the clarity that is already there. It works from what you say, and stops there.</p>
+                    </article>
+                    <article class="np-seat">
+                        <h3><span class="np-kicker">Advisors on your themes</span>Wired in as they go live</h3>
+                        <p>The standing seats are always on. Around them, specialist seats wire in when a theme goes live: hiring and recruitment, and deal structuring as the enterprise deal moves to signature. You get the seat when the theme is live, and only then.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical box for the CTO -->
+        <section class="np-section">
+            <div class="container">
+                <p class="np-label">A note on what is computed, and what is not yet</p>
+                <div class="np-tech">
+                    <p>The numbers are not produced by the language model. They come from a separate deterministic engine: pure Python, money held in <code>Decimal</code> so there is no floating-point drift, no randomness, the same inputs returning the same output every time. <strong>213 tests</strong> cover it. Every figure carries the method and the inputs that produced it, so any number here can be traced back to how it was computed. The board is forbidden from computing, rounding, or inventing a figure; where it needs one, it asks the engine.</p>
+                    <p>Today the engine computes, deterministically: your <strong>valuation range</strong>, <strong>ownership and dilution at each ask</strong>, <strong>runway</strong>, and the <strong>24-month projection</strong>. Three things it does not compute yet, and we will not pretend otherwise: net revenue retention enters as a figure you supply; CAC and LTV are not in the engine today; MRR appears in the projection as ARR over twelve, with a retention-driven build still to come.</p>
+                    <p>As the underlying data comes in, each of those becomes a computed, reproducible output, built the same deterministic way, and this is where we would work with you and your CTO to get the inputs clean and wire the calculations in. <span class="np-lastline">We would rather name the line exactly than show a number we cannot stand behind.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What it replaces -->
+        <section class="np-section">
+            <div class="container">
+                <h2 class="np-h2">What it replaces</h2>
+                <p class="np-p np-p--muted">At current market rates, the CFO function alone runs:</p>
+                <ul class="np-list">
+                    <li>A <strong>fractional CFO</strong> at your stage: roughly €3,000 to €4,500 a month, so €36k to €54k a year.</li>
+                    <li>A one-off <strong>financial-model build</strong>: €8,000 to €25,000.</li>
+                </ul>
+                <p class="np-note">Kristina's advisory, the funder finder and the matchmaking sit above the board and are priced separately. The board makes that work sharper between sessions.</p>
+            </div>
+        </section>
+
+        <!-- Why it compounds -->
+        <section class="np-section">
+            <div class="container">
+                <h2 class="np-h2">Why it compounds</h2>
+                <p class="np-p">The board is calibrated to SocialJet in the intake, and from then on it carries what a report cannot: what you decided last week, what an investor pushed on, the number you could not yet defend. Every time you use it, it sharpens.</p>
+                <p class="np-p">Over a raise you use it near-daily for months, and the version that walks you into your final investor meeting is far more useful than the one you started with. After the raise it can be rebuilt, every learning still inside it, into a board of advisors for the next stretch. A generic AI chat cannot do this, because it is not calibrated to SocialJet and it does not carry your context forward.</p>
+                <p class="np-p np-p--muted">That is why it is a subscription, and why the first stretch is free: you feel it compound before it costs you anything.</p>
+            </div>
+        </section>
+
+        <!-- Founding-client offer -->
+        <section class="np-section">
+            <div class="container">
+                <h2 class="np-h2">Founding-client offer</h2>
+                <p class="np-p np-p--muted">First means founding terms: a rate locked below what anyone pays after you, in exchange for being the case we point to.</p>
+                <ul class="np-list np-offer">
+                    <li><strong>Build and calibration: €5,000.</strong> Your custom CFO engine run on your numbers, with two rounds of tuning. Around 40 to 50 hours of hands-on work plus SuperStories' proprietary prompting. A comparable one-off model build alone runs €8,000 to €25,000; here it also carries the board around it.</li>
+                    <li><strong>First three months: free.</strong> The full board, CFO seat and all, from week one.</li>
+                    <li><strong>Then €500 a month</strong>, your founding rate, locked for the engagement. Below what the board will cost anyone who comes after you.</li>
+                    <li><strong>A success fee of €10,000</strong> when you close a round within eighteen months, so we carry part of the outcome with you.</li>
+                </ul>
+                <p class="np-note">Founding client, both ways: your rate is locked, and you help shape the board every founder after you will use.</p>
+            </div>
+        </section>
+
+        <!-- Sign + questions -->
+        <section class="np-act" id="akkoord">
+            <div class="container">
+                <p class="np-walkout">What you walk out with: a valuation you can defend, a raise you have already rehearsed, and a short list of what is still to fix, so the investor conversation is not where you first meet the questions that decide it.</p>
+
+                <div class="np-panel">
+                    <p class="np-label">Sign off</p>
+                    <p class="np-p" style="font-size:var(--text-base)">If the terms are right, sign here. This records your intent to take the founding-client engagement; nothing is billed until the build starts, and the first three months are free.</p>
+
+                    <div class="np-field">
+                        <label for="np-name">Full name</label>
+                        <input type="text" id="np-name" name="name" autocomplete="name" placeholder="Nikita France">
+                    </div>
+
+                    <div class="np-field">
+                        <label for="np-sig">Signature</label>
+                        <div class="np-sigwrap">
+                            <canvas class="np-sigpad" id="np-sig" width="640" height="150" aria-label="Draw your signature"></canvas>
+                            <span class="np-sighint" id="np-sighint">Draw your signature</span>
+                        </div>
+                        <button type="button" class="np-sigclear" id="np-sigclear">Clear</button>
+                    </div>
+
+                    <div class="np-check">
+                        <input type="checkbox" id="np-agree">
+                        <label for="np-agree">I accept the founding-client terms above: €5,000 build, three months free, then €500 a month for the engagement, and a €10,000 success fee on closing a round within eighteen months.</label>
+                    </div>
+
+                    <div class="np-actions">
+                        <button type="button" class="np-btn" id="np-sign" disabled>Sign off →</button>
+                        <span class="np-conf" id="np-date"></span>
+                    </div>
+
+                    <div class="np-confirm" id="np-confirm" hidden></div>
+                </div>
+
+                <div class="np-ask">
+                    <p class="np-label">First, any questions?</p>
+                    <p>Before you sign, put your questions to the board itself. Speak them, and get them answered in Nikita's own words. No form, no typing.</p>
+                    <a class="np-btn np-btn--ghost" id="np-ttth" href="#" data-ttth-placeholder="true" target="_blank" rel="noopener">Speak your questions · Talk to the Hand</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-payoff">Sharpest thinkers. Frontline operators. Unfair intel.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    Growth Intel × The Best Match · SuperStories BV · Amsterdam
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:peter@superstories.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        var canvas = document.getElementById('np-sig');
+        var ctx = canvas.getContext('2d');
+        var hint = document.getElementById('np-sighint');
+        var nameEl = document.getElementById('np-name');
+        var agreeEl = document.getElementById('np-agree');
+        var signBtn = document.getElementById('np-sign');
+        var confirmEl = document.getElementById('np-confirm');
+        var dateEl = document.getElementById('np-date');
+        var drawn = false, drawing = false, last = null;
+
+        // Scale canvas for crisp lines on retina.
+        function fitCanvas() {
+            var ratio = window.devicePixelRatio || 1;
+            var rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * ratio;
+            canvas.height = rect.height * ratio;
+            ctx.scale(ratio, ratio);
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim() || '#e2594a';
+        }
+        // Fit after layout settles.
+        window.requestAnimationFrame(fitCanvas);
+
+        function pos(e) {
+            var rect = canvas.getBoundingClientRect();
+            var p = e.touches ? e.touches[0] : e;
+            return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+        }
+        function start(e) { drawing = true; last = pos(e); if (!drawn) { drawn = true; hint.style.display = 'none'; } e.preventDefault(); }
+        function move(e) {
+            if (!drawing) return;
+            var p = pos(e);
+            ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+            last = p; update(); e.preventDefault();
+        }
+        function end() { drawing = false; }
+
+        canvas.addEventListener('mousedown', start);
+        canvas.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', end);
+        canvas.addEventListener('touchstart', start, { passive: false });
+        canvas.addEventListener('touchmove', move, { passive: false });
+        canvas.addEventListener('touchend', end);
+
+        document.getElementById('np-sigclear').addEventListener('click', function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawn = false; hint.style.display = ''; update();
+        });
+
+        function ready() { return nameEl.value.trim().length > 1 && agreeEl.checked && drawn; }
+        function update() { signBtn.disabled = !ready(); }
+        nameEl.addEventListener('input', update);
+        agreeEl.addEventListener('change', update);
+
+        // Sign-off endpoint. Fill SIGN_ENDPOINT with the deployed sign-service URL
+        // (e.g. https://sign.superstories.com/api/sign). Empty means the sign-off is
+        // recorded on-page only and finalised via Talk to the Hand.
+        var SIGN_ENDPOINT = "";
+
+        signBtn.addEventListener('click', function () {
+            if (!ready()) return;
+            var when = new Date();
+            var stamp = when.toLocaleString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+            var record = { name: nameEl.value.trim(), agreed: true, page: 'NikitaFrance', signed_at: when.toISOString(), signature_png: canvas.toDataURL('image/png') };
+            try { localStorage.setItem('np_signoff', JSON.stringify(record)); } catch (e) {}
+
+            signBtn.disabled = true;
+            signBtn.textContent = 'Signed ✓';
+            dateEl.textContent = stamp;
+            confirmEl.hidden = false;
+            confirmEl.innerHTML = '<strong>Signed by ' + escapeHtml(record.name) + '</strong> on ' + stamp +
+                '. That is your intent recorded. To finalise, confirm it out loud in one line on Talk to the Hand, using the button below. Peter will be in touch to start the build.';
+            document.getElementById('np-ttth').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Persist server-side when the endpoint is wired. Best-effort: the
+            // on-page confirmation already stands, so a failed POST does not undo it.
+            if (SIGN_ENDPOINT) {
+                fetch(SIGN_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(record)
+                }).catch(function () { /* stays confirmed on-page; retryable out of band */ });
+            }
+        });
+
+        function escapeHtml(s) { return s.replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+        // Talk to the Hand link. Fill TTTH_URL with Nikita's real link; until then the button explains it is not yet wired.
+        var TTTH_URL = "";
+        var ttth = document.getElementById('np-ttth');
+        if (TTTH_URL) { ttth.href = TTTH_URL; ttth.removeAttribute('data-ttth-placeholder'); }
+        else {
+            ttth.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('Talk to the Hand link goes here. Add TTTH_URL in the page script.');
+            });
+        }
+    })();
+    </script>
+
+    <!-- Review annotation tool. Remove this config + include before this page goes to Nikita. -->
+    <script>window.SS_ANNOTATIONS={api:"https://annotations.superstories.com",project:"nikita-proposal"};</script>
+    <script src="../js/annotate.js" defer></script>
+
+</body>
+</html>
