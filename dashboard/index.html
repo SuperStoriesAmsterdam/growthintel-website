@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Roadmap to Raise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F4F5F7; --surface:#FFFFFF; --surface-2:#EEF0F4;
+    --ink:#1A1D24; --ink-2:#565C6B; --ink-3:#8A90A0; --line:#E1E4EB;
+    --accent:#4B57A6; --accent-soft:#E7E9F5; --accent-ink:#FFFFFF;
+    --good:#2E7D5B; --good-bg:#E4F1EA;
+    --warn:#9C6B1E; --warn-bg:#F6EBD6;
+    --idle:#7C8394; --idle-bg:#E9EBF0;
+    --shadow:0 1px 2px rgba(20,22,30,.04), 0 6px 20px rgba(20,22,30,.05);
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#131519; --surface:#1B1E26; --surface-2:#232733;
+      --ink:#ECEEF3; --ink-2:#A2A8B6; --ink-3:#6E7484; --line:#2B303B;
+      --accent:#8D97DC; --accent-soft:#242742; --accent-ink:#12141A;
+      --good:#74CBA0; --good-bg:#173428;
+      --warn:#E1B667; --warn-bg:#362b16;
+      --idle:#828A9B; --idle-bg:#242833;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#131519; --surface:#1B1E26; --surface-2:#232733;
+    --ink:#ECEEF3; --ink-2:#A2A8B6; --ink-3:#6E7484; --line:#2B303B;
+    --accent:#8D97DC; --accent-soft:#242742; --accent-ink:#12141A;
+    --good:#74CBA0; --good-bg:#173428;
+    --warn:#E1B667; --warn-bg:#362b16;
+    --idle:#828A9B; --idle-bg:#242833;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.28);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    margin:0; padding-block:40px; padding-inline:20px;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px; margin:0 auto; display:flex; flex-direction:column; gap:26px}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3)}
+  h1,h2,h3{font-family:"Spectral",Georgia,serif; font-weight:600; text-wrap:balance; margin:0}
+
+  /* header */
+  .head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; padding-bottom:22px; border-bottom:1px solid var(--line)}
+  .head h1{font-size:30px; line-height:1.1; letter-spacing:-.01em}
+  .head .sub{color:var(--ink-2); margin-top:6px; font-size:15px}
+  .head .why{font-family:"Spectral",Georgia,serif; font-style:italic; color:var(--ink-2); font-size:16px; margin-top:12px; max-width:56ch; line-height:1.45}
+  .stage-badge{display:inline-flex; align-items:baseline; gap:8px; background:var(--accent-soft); color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); padding:8px 14px; border-radius:999px}
+  .stage-badge b{font-family:"Spectral",serif; font-size:16px}
+  .stage-badge .mono{font-size:11px; color:var(--ink-2); letter-spacing:.08em; text-transform:uppercase}
+
+  section{background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); overflow:hidden}
+  .sec-head{padding:18px 22px 0}
+  .sec-head h2{font-size:19px}
+  .sec-head p{color:var(--ink-2); font-size:13.5px; margin:5px 0 0; max-width:62ch}
+  .sec-body{padding:18px 22px 22px}
+
+  /* the gate */
+  .gate-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .cond{border:1px solid var(--line); border-radius:11px; padding:15px; background:var(--surface-2); display:flex; flex-direction:column; gap:10px; min-height:150px}
+  .cond .num{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); letter-spacing:.1em}
+  .cond .txt{font-size:14px; color:var(--ink); flex:1}
+  .tag{align-self:flex-start; font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; padding:4px 9px; border-radius:6px; display:inline-flex; gap:6px; align-items:center}
+  .tag::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
+  .tag.met{color:var(--good); background:var(--good-bg)}
+  .tag.pend{color:var(--idle); background:var(--idle-bg)}
+
+  /* two column */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+
+  /* patterns */
+  .pattern{padding:16px 0; border-top:1px solid var(--line)}
+  .pattern:first-child{padding-top:4px; border-top:0}
+  .pattern .pname{font-family:"Spectral",serif; font-size:16px; font-weight:500; line-height:1.25}
+  .pattern .psrc{font-size:12px; color:var(--ink-3); margin-top:2px}
+  .track{display:flex; gap:5px; margin-top:12px}
+  .seg{flex:1; height:6px; border-radius:3px; background:var(--idle-bg)}
+  .seg.done{background:var(--good)}
+  .seg.now{background:var(--accent)}
+  .steps{display:flex; justify-content:space-between; margin-top:7px}
+  .steps span{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-3)}
+  .steps span.on{color:var(--accent); font-weight:500}
+  .steps span.was{color:var(--good)}
+
+  .subcard{margin-top:16px; background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:13px 15px; display:flex; justify-content:space-between; align-items:center; gap:12px}
+  .subcard .lab{font-size:13px; color:var(--ink-2)}
+  .subcard .lab b{color:var(--ink); font-weight:600}
+  .big{font-family:"Spectral",serif; font-size:26px; font-weight:600; line-height:1}
+
+  /* deliverables */
+  .deliv{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 0; border-top:1px solid var(--line)}
+  .deliv:first-child{border-top:0; padding-top:2px}
+  .deliv .dl{font-size:14.5px}
+  .deliv .dl small{display:block; color:var(--ink-3); font-size:12px; margin-top:1px}
+  .status{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.05em; text-transform:uppercase; padding:4px 9px; border-radius:6px; white-space:nowrap; display:inline-flex; gap:6px; align-items:center}
+  .status::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
+  .status.done{color:var(--good); background:var(--good-bg)}
+  .status.prog{color:var(--warn); background:var(--warn-bg)}
+  .status.idle{color:var(--idle); background:var(--idle-bg)}
+
+  /* fund stats */
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .stat{background:var(--surface-2); border:1px solid var(--line); border-radius:11px; padding:16px}
+  .stat .n{font-family:"Spectral",serif; font-size:30px; font-weight:600; line-height:1; color:var(--accent)}
+  .stat .k{font-size:12.5px; color:var(--ink-2); margin-top:7px}
+
+  .foot{color:var(--ink-3); font-size:12px; text-align:center; padding-top:2px}
+  .foot .mono{font-size:11px}
+
+  @media (max-width:720px){
+    .gate-grid{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .cond{min-height:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="head">
+    <div>
+      <div class="eyebrow">The Best Match · Roadmap to Raise</div>
+      <h1>SocialJet</h1>
+      <div class="sub">Nikita France · founder readiness · started 5 October 2026</div>
+      <div class="why">The raise is one of the most important moments in your professional life. This tracks every part of it, the inside and the outside, in one place.</div>
+    </div>
+    <div class="stage-badge">
+      <b>Preparing</b>
+      <span class="mono">gate 0 / 3</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>The roadshow gate</h2>
+      <p>The roadshow starts when all three are true. Until then we build. You only get one first meeting with each investor.</p>
+    </div>
+    <div class="sec-body">
+      <div class="gate-grid">
+        <div class="cond">
+          <span class="num">01</span>
+          <span class="txt">Every number in the deck traces back to its source without being asked.</span>
+          <span class="tag pend">Not yet</span>
+        </div>
+        <div class="cond">
+          <span class="num">02</span>
+          <span class="txt">A practice investor call runs through without looking for reassurance halfway.</span>
+          <span class="tag pend">Not yet</span>
+        </div>
+        <div class="cond">
+          <span class="num">03</span>
+          <span class="txt">The week-one recording and now show a difference we can both name.</span>
+          <span class="tag pend">Not yet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cols">
+
+    <section>
+      <div class="sec-head">
+        <h2>The inner work</h2>
+        <p>The patterns the READ surfaced, worked one at a time: identify, moderate, and where it goes, transform.</p>
+      </div>
+      <div class="sec-body">
+
+        <div class="pattern">
+          <div class="pname">Needs it perfect before showing it</div>
+          <div class="psrc">From the READ · shows up in the deck and the practice call</div>
+          <div class="track"><span class="seg done"></span><span class="seg now"></span><span class="seg"></span></div>
+          <div class="steps"><span class="was">Identified</span><span class="on">Moderating</span><span>Transformed</span></div>
+        </div>
+
+        <div class="pattern">
+          <div class="pname">Carries the whole company alone</div>
+          <div class="psrc">From the READ · shows up in how the round is framed</div>
+          <div class="track"><span class="seg now"></span><span class="seg"></span><span class="seg"></span></div>
+          <div class="steps"><span class="on">Identified</span><span>Moderating</span><span>Transformed</span></div>
+        </div>
+
+        <div class="pattern">
+          <div class="pname">Holds tightest to the part that matters most</div>
+          <div class="psrc">From the READ · shows up in negotiation</div>
+          <div class="track"><span class="seg now"></span><span class="seg"></span><span class="seg"></span></div>
+          <div class="steps"><span class="on">Identified</span><span>Moderating</span><span>Transformed</span></div>
+        </div>
+
+        <div class="subcard">
+          <div class="lab">Voice Reflect<br><b>6-day</b> streak this week</div>
+          <div class="big mono">6</div>
+        </div>
+        <div class="subcard">
+          <div class="lab">Voice shift<br>week-one recording vs now</div>
+          <div class="tag pend" style="align-self:center">Not yet comparable</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <h2>The outer work</h2>
+        <p>Built from center, to what investors actually ask for. Each piece read against the others so nothing contradicts.</p>
+      </div>
+      <div class="sec-body">
+
+        <div class="deliv">
+          <div class="dl">Positioning &amp; story<small>Who you are without performing</small></div>
+          <span class="status prog">In progress</span>
+        </div>
+        <div class="deliv">
+          <div class="dl">Deck &amp; one-pager<small>Structure built from what you stand for</small></div>
+          <span class="status prog">In progress</span>
+        </div>
+        <div class="deliv">
+          <div class="dl">Financial model &amp; valuation<small>With a specialist and the board</small></div>
+          <span class="status idle">Not started</span>
+        </div>
+        <div class="deliv">
+          <div class="dl">Data room<small>To what investors ask for</small></div>
+          <span class="status idle">Not started</span>
+        </div>
+        <div class="deliv">
+          <div class="dl">Fund map<small>Angels, syndicates, family offices that fit</small></div>
+          <span class="status prog">In progress</span>
+        </div>
+
+        <div class="stats" style="margin-top:18px">
+          <div class="stat"><div class="n mono">18</div><div class="k">Funds mapped, each with a reason they fit</div></div>
+          <div class="stat"><div class="n mono">5</div><div class="k">Warm paths found in your network</div></div>
+          <div class="stat"><div class="n mono">0/3</div><div class="k">Outreach waves sent</div></div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>Growth Intel board</h2>
+      <p>Built from the READ, it carries the work between sessions and prepares you per investor call.</p>
+    </div>
+    <div class="sec-body">
+      <div class="stats">
+        <div class="stat"><div class="n mono">7</div><div class="k">Advisors on your board</div></div>
+        <div class="stat"><div class="n mono">12</div><div class="k">Sessions with the board this month</div></div>
+        <div class="stat"><div class="n mono">3</div><div class="k">Call prep briefs generated</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span class="mono">Example data · SocialJet · October 2026</span> — a working view of one founder's roadmap. Not real figures.
+  </div>
+
+</div>
+
+<script>window.SS_ANNOTATIONS={api:"https://annotations.superstories.com",project:"growthintel"};</script>
+<script src="../js/annotate.js" defer></script>
+
+</body>
+</html>

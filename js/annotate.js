@@ -166,6 +166,8 @@
                 border-radius: 6px; padding: 7px 9px; font-family: inherit; font-size: 13px;
                 background: #fff; color: #0f172a; outline: none; resize: vertical; box-sizing: border-box; }
             #ss-form input:focus, #ss-form textarea:focus { border-color: ${TARGETS.client.color}; }
+            #ss-form-warn { margin: -4px 0 10px; font-size: 11px; line-height: 1.45;
+                color: #64748b; }
             #ss-form-actions { display: flex; gap: 8px; }
             #ss-form-actions button { flex: 1; padding: 7px; border: 1px solid #0f172a;
                 border-radius: 6px; background: #fff; color: #0f172a;
@@ -248,6 +250,7 @@
         form.innerHTML = `
             <label><span>Your name</span><input type="text" id="ss-form-name" placeholder="Name" value="${userName}"></label>
             <label><span>Note</span><textarea id="ss-form-note" rows="3" placeholder="Your annotation..."></textarea></label>
+            <p id="ss-form-warn">Notes are saved on our server. No passwords, API keys or access tokens.</p>
             <div id="ss-form-actions">
                 <button id="ss-form-save">Save</button>
                 <button id="ss-form-cancel">Cancel</button>

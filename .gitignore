@@ -5,3 +5,6 @@ node_modules/
 # local review tools, never deploy
 _routes.html
 _balance.html
+
+# local session config, never deploy
+.claude/

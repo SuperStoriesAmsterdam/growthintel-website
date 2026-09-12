@@ -1,0 +1,186 @@
+/* terms.css — Growth Intel · Software Use and Responsibility Terms page */
+/* Reuses tokens.css + style.css. Only page-specific pieces live here. */
+
+/* --- Page header --- */
+.terms-head {
+    text-align: center;
+    padding-top: calc(var(--space-16) + var(--space-8));
+    padding-bottom: var(--space-8);
+}
+.terms-head .section-title {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.terms-parties {
+    max-width: 620px;
+    margin: var(--space-3) auto 0;
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.9;
+}
+.terms-parties strong { color: var(--color-text); font-weight: var(--weight-semibold); }
+.terms-parties .fill {
+    display: inline-block;
+    min-width: 12ch;
+    border-bottom: 1px solid var(--color-border-lit);
+}
+
+/* --- The document body: paper, like a printed agreement --- */
+.terms-doc {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.terms-doc .container { max-width: 760px; }
+
+.terms-lede {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+}
+
+/* Numbered clauses. The number is a gold display glyph, like the site's labels. */
+.clause { margin-bottom: var(--space-6); }
+.clause-title {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: var(--space-2);
+}
+.clause-num {
+    flex: none;
+    font-family: var(--font-brand);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-gold);
+    letter-spacing: 0.02em;
+}
+.clause p {
+    font-size: var(--text-lg);
+    line-height: 1.65;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+.clause ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-2) 0;
+}
+.clause li {
+    position: relative;
+    padding-left: var(--space-3);
+    margin-bottom: var(--space-1);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+}
+.clause li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+}
+
+/* --- Acceptance form --- */
+.accept-section { text-align: center; }
+.accept-section .section-title,
+.accept-section .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+}
+.accept-card {
+    max-width: 560px;
+    margin: var(--space-6) auto 0;
+    border: 1px solid var(--color-border-lit);
+    border-top: 2px solid var(--color-gold);
+    border-radius: 10px;
+    background: var(--color-surface);
+    padding: var(--space-6) var(--space-4) var(--space-4);
+    text-align: left;
+}
+
+.accept-field { margin-bottom: var(--space-3); }
+.accept-field label {
+    display: block;
+    font-family: var(--font-brand);
+    font-size: 11px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+}
+.accept-card input[type="text"],
+.accept-card input[type="email"],
+.accept-card input[type="date"] {
+    width: 100%;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-lit);
+    border-radius: 6px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    padding: 12px 14px;
+    transition: border-color var(--transition-base);
+}
+.accept-card input:focus { outline: none; border-color: var(--color-accent); }
+
+.accept-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-3);
+}
+@media (max-width: 480px) {
+    .accept-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The tick box: the electronic signature */
+.accept-check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin: var(--space-4) 0 var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    cursor: pointer;
+}
+.accept-check input {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--color-btn);
+    cursor: pointer;
+}
+.accept-check span {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--color-text);
+}
+.accept-card .cta-button { border: none; cursor: pointer; width: 100%; text-align: center; }
+.accept-note {
+    margin-top: var(--space-3);
+    color: var(--color-gold);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+.accept-legal {
+    margin-top: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--color-text-faint);
+    line-height: 1.6;
+}
